@@ -4,12 +4,12 @@
  * @ngdoc overview
  * @name generatorApp
  * @description
- * # generatorApp
+ * # daxmallAdmin
  *
  * Main module of the application.
  */
 angular
-  .module('generatorApp', [
+  .module('daxmallAdmin', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
