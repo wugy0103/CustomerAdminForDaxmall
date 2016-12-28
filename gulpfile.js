@@ -2,12 +2,12 @@
 'use strict';
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')();//插件管理，加载bower文件中的gulp插件
 var openURL = require('open');
-var lazypipe = require('lazypipe');
-var rimraf = require('rimraf');
-var wiredep = require('wiredep').stream;
-var runSequence = require('run-sequence');
+var lazypipe = require('lazypipe');//分离多个pipe导流管道至一个工厂，即把多个stream链进行单独集合
+var rimraf = require('rimraf');//删除文件
+var wiredep = require('wiredep').stream;//把真正所需要的文件自动引入到html文件中
+var runSequence = require('run-sequence');//让gulp任务，可以相互独立，解除任务间的依赖，增强task复用
 
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
@@ -70,15 +70,15 @@ gulp.task('clean:tmp', function (cb) {
 });
 
 gulp.task('start:client', ['start:server', 'styles'], function () {
-  openURL('http://localhost:9000');
+  openURL('http://localhost:8003');
 });
 
 gulp.task('start:server', function() {
   $.connect.server({
     root: [yeoman.app, '.tmp'],
-    livereload: true,
+    livereload: true,//自动刷新
     // Change this to '0.0.0.0' to access the server from outside.
-    port: 9000
+    port: 8003
   });
 });
 
@@ -86,7 +86,7 @@ gulp.task('start:server:test', function() {
   $.connect.server({
     root: ['test', yeoman.app, '.tmp'],
     livereload: true,
-    port: 9001
+    port: 8004
   });
 });
 
@@ -124,7 +124,7 @@ gulp.task('serve:prod', function() {
   $.connect.server({
     root: [yeoman.dist],
     livereload: true,
-    port: 9000
+    port: 8003
   });
 });
 
