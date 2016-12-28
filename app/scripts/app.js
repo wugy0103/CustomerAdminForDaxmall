@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc overview
- * @name generatorApp
+ * @name daxmallAdmin
  * @description
  * # daxmallAdmin
  *

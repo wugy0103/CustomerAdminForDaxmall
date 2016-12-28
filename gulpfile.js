@@ -116,6 +116,7 @@ gulp.task('serve', function (cb) {
   runSequence('clean:tmp',
     ['lint:scripts'],
     ['start:client'],
+      ['bower'],
     'watch', cb);
 });
 
@@ -143,7 +144,7 @@ gulp.task('bower', function () {
       directory: yeoman.app + '/bower_components',
       ignorePath: '..'
     }))
-  .pipe(gulp.dest(yeoman.app + '/views'));
+  .pipe(gulp.dest(yeoman.app));
 });
 
 ///////////

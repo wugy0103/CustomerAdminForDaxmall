@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name generatorApp.controller:MainCtrl
+ * @name daxmallAdmin.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the generatorApp
+ * Controller of the daxmallAdmin
  */
-angular.module('generatorApp')
+angular.module('daxmallAdmin')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
