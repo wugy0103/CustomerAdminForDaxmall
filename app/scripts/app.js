@@ -8,35 +8,13 @@
  *
  * Main module of the application.
  */
-  //.config(function ($routeProvider) {
-  //  $routeProvider
-  //    .when('/', {
-  //      templateUrl: 'views/main.html',
-  //      controller: 'MainCtrl',
-  //      controllerAs: 'main'
-  //    })
-  //    .when('/about', {
-  //      templateUrl: 'views/about.html',
-  //      controller: 'AboutCtrl',
-  //      controllerAs: 'about'
-  //    })
-  //    .otherwise({
-  //      redirectTo: '/'
-  //    });
-  //});
-//modules = ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize','ngTouch','ui.router',  'ui.bootstrap',
-//  'ngProgress', 'ui.select', 'checklist-model', "ajoslin.promise-tracker", 'angularPromiseButtons', 'AdminFilters',
-//  'AdminService', "ui.bootstrap", "cgBusy", 'ngStorage', 'angular-confirm', 'toastr', 'ngTagsInput', 'naif.base64',
-//  'ngUpload', 'ui.tree', 'angularMoment', 'ui.bootstrap.datetimepicker'
-//];
-
 var App, modules;
-modules = ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize','ngTouch','ui.router'];
+modules = ['ui.router','ngStorage'];
 App = angular.module('daxmallAdmin', modules);
 
 //路由配置
 App.config(['$stateProvider', '$urlRouterProvider',"$locationProvider", function($stateProvider, $urlRouterProvider,$locationProvider) {
-  $locationProvider.hashPrefix('');//新的ngRoute中默认的路由分割符号是!#，已经不是#了,这句话就是用回#。
+  $locationProvider.hashPrefix('');//新的ngRoute中默认的路由分割符号是#!，已经不是#了,这句话就是用回#。
   $urlRouterProvider.otherwise('/User/Login');
   $stateProvider.state('dashboard', {
     url: "/",
@@ -74,7 +52,7 @@ App.config(['$stateProvider', '$urlRouterProvider',"$locationProvider", function
 //  });
 //}]);
 //
-//// http拦截器
+// http拦截器
 //App.config(['$httpProvider', function($httpProvider) {
 //  $httpProvider.interceptors.push([
 //    '$injector',

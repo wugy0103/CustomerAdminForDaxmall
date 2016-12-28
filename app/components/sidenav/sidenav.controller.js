@@ -1,8 +1,5 @@
-/*
- * @Author: 唐文雍
- * @Date:   2016-05-09 20:52:27
- * @Last Modified by:   snoob
- * @Last Modified time: 2016-11-18 16:32:05
+/**
+ * Created by wugy on 2016/12/28.
  */
 
 'use strict';

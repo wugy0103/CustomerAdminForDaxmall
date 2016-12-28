@@ -1,8 +1,5 @@
-/*
- * @Author: 唐文雍
- * @Date:   2016-05-09 21:17:22
- * @Last Modified by:   wuguoyuan
- * @Last Modified time: 2016-10-29 18:03:40
+/**
+ * Created by wugy on 2016/12/28.
  */
 
 'use strict';
@@ -13,6 +10,7 @@ App.controller('HeaderController', function($scope, $state, restful, Session, ms
     });
     $scope.init = function(){
         $scope.userName = Session.$storage.userName;
+
     };
     $scope.init();
     $scope.logout = function() {

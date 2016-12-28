@@ -10,11 +10,73 @@ body {
     font-family: "Microsoft Yahei";
     margin-top: 100px;
   }
-  .icon {
+  .main-icon {
     font-size: 160px;
     margin-top: 100px;
   }
 }
+
+//侧边栏
+.side-nav {
+  width: 300px;
+  margin-left: -15px;
+  position: fixed;
+  z-index: 1001;
+  .side-nav-top-icon {
+    font-size: 120px;
+  }
+  .tree-toggle {
+    cursor: pointer;
+  }
+  .top-tree {
+    width: 100%;
+    color: #fff;
+    padding: 8px 20px;
+  }
+  .second-tree {
+    padding: 8px 20px;
+    color: #000;
+  }
+  .third-tree {
+    padding: 8px 20px 8px 35px;
+    width: 100%;
+    color: #fff;
+  }
+  .least-tree a {
+    padding: 8px 50px;
+    color: #000;
+  }
+
+}
+.side-nav > li {
+  border-bottom: 1px solid #00a392;
+  &:nth-child(2) {
+    border-top: 1px solid #00a392;
+  }
+}
+
+.nav > li > a {
+  color: #000;
+}
+.nav > li {
+  &.active {
+    background-color: #00a392;
+    a {
+      color: #fff !important;
+    }
+  }
+  > a {
+    &:focus,
+    &:hover {
+      background-color: #00a392;
+    }
+  }
+  > a:focus a {
+    color: #fff !important;
+  }
+}
+
+
 
 .table > {
   tbody > tr > {
@@ -40,24 +102,6 @@ body {
       word-break: keep-all;
       white-space: nowrap;
     }
-  }
-}
-
-.nav > li {
-  &.active {
-    background-color: #00a392;
-    a {
-      color: #fff !important;
-    }
-  }
-  > a {
-    &:focus,
-    &:hover {
-      background-color: #00a392;
-    }
-  }
-  > a:focus a {
-    color: #fff !important;
   }
 }
 
@@ -268,42 +312,7 @@ body {
   min-height: 500px;
 }
 
-.side-nav {
-  width: 300px;
-  margin-left: -15px;
-  position: fixed;
-  z-index: 1001;
-  .tree-toggle {
-    cursor: pointer;
-  }
-  .top-tree {
-    width: 100%;
-    color: #fff;
-    padding: 8px 20px;
-  }
-  .second-tree {
-    padding: 8px 20px;
-    color: #000;
-  }
-  .third-tree {
-    padding: 8px 20px 8px 35px;
-    width: 100%;
-    color: #fff;
-  }
-  .least-tree a {
-    padding: 8px 50px;
-    color: #000;
-  }
-  i {
-    &.fa {
-      padding-right: 5px;
-    }
-    &.fa-circle {
-      font-size: 12px;
-      color: #00796B;
-    }
-  }
-}
+
 
 .nowrap {
   white-space: nowrap;
@@ -313,16 +322,7 @@ body {
   word-break: break-word;
 }
 
-.side-nav > li {
-  border-bottom: 1px solid #00a392;
-  &:nth-child(2) {
-    border-top: 1px solid #00a392;
-  }
-}
 
-.nav > li > a {
-  color: #000;
-}
 
 [ui-view] {
   margin-top: 85px;
