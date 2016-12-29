@@ -9,10 +9,7 @@
  * Main module of the application.
  */
 var App, modules;
-modules = ['ui.router', 'ngSanitize', 'ui.bootstrap',
-  'ngTouch', 'ngProgress', 'ui.select', 'checklist-model', "ajoslin.promise-tracker", 'angularPromiseButtons', 'AdminFilters',
-  'AdminService', "ui.bootstrap", "cgBusy", 'ngStorage', 'angular-confirm', 'toastr', 'ngTagsInput', 'naif.base64',
-  'ngUpload', 'ui.tree', 'angularMoment', 'ui.bootstrap.datetimepicker'];
+modules = ['ui.router', 'ngProgress', 'ui.select','angularPromiseButtons','ngStorage', 'angular-confirm', 'toastr', 'ngTagsInput', 'naif.base64','ngUpload', 'ui.tree', 'angularMoment','AdminService','AdminFilters'];
 App = angular.module('daxmallAdmin', modules);
 
 //路由配置
@@ -56,18 +53,18 @@ App.config(['toastrConfig', function(toastrConfig) {
 }]);
 
 // http拦截器
-App.config(['$httpProvider', function($httpProvider) {
-  $httpProvider.interceptors.push([
-    '$injector',
-    function($injector) {
-      return $injector.get('AuthInterceptor');
-    }
-  ]);
-}]);
+//App.config(['$httpProvider', function($httpProvider) {
+//  $httpProvider.interceptors.push([
+//    '$injector',
+//    function($injector) {
+//      return $injector.get('AuthInterceptor');
+//    }
+//  ]);
+//}]);
 
 //监控路由变化
 App.run(['$state', '$rootScope', 'AuthService', function($state, $rootScope, AuthService) {
-  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+  $rootScope.$on('$stateChangeStart', function(event, toState) {
     //判断是否是不包括头部和侧栏的页面
     $rootScope.isOwnPage = _.contains(["login"], toState.name);
     //路由拦截，无权限则跳转到登录界面
