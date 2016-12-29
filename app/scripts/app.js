@@ -9,13 +9,13 @@
  * Main module of the application.
  */
 var App, modules;
-modules = ['ui.router', 'ngProgress', 'ui.select','angularPromiseButtons','ngStorage', 'angular-confirm', 'toastr', 'ngTagsInput', 'naif.base64','ngUpload', 'ui.tree', 'angularMoment','AdminService','AdminFilters'];
+modules = ['ui.router', 'AdminService','AdminFilters','angularPromiseButtons', 'toastr','ngStorage', 'angular-confirm', 'ngTagsInput', 'naif.base64','ngUpload', 'ui.tree','ngProgress', 'ui.select'];
 App = angular.module('daxmallAdmin', modules);
 
 //路由配置
 App.config(['$stateProvider', '$urlRouterProvider',"$locationProvider", function($stateProvider, $urlRouterProvider,$locationProvider) {
   $locationProvider.hashPrefix('');//新的ngRoute中默认的路由分割符号是#!，已经不是#了,这句话就是用回#。
-  $urlRouterProvider.otherwise('/User/Login');
+  $urlRouterProvider.otherwise('/user/login');
   $stateProvider.state('dashboard', {
     url: "/",
     templateUrl: 'views/main.html'
@@ -29,7 +29,7 @@ App.config(['$stateProvider', '$urlRouterProvider',"$locationProvider", function
 //promise 按钮
 App.config(['angularPromiseButtonsProvider', function(angularPromiseButtonsProvider) {
   angularPromiseButtonsProvider.extendConfig({
-    spinnerTpl: '<i class="fa fa-spinner" aria-hidden="true"></i>',
+    spinnerTpl: '<i class="iconfont icon-jiazai" aria-hidden="true"></i>',
     disableBtn: true,
     btnLoadingClass: 'is-loading',
     addClassToCurrentBtnOnly: false,
@@ -53,14 +53,14 @@ App.config(['toastrConfig', function(toastrConfig) {
 }]);
 
 // http拦截器
-//App.config(['$httpProvider', function($httpProvider) {
-//  $httpProvider.interceptors.push([
-//    '$injector',
-//    function($injector) {
-//      return $injector.get('AuthInterceptor');
-//    }
-//  ]);
-//}]);
+App.config(['$httpProvider', function($httpProvider) {
+  $httpProvider.interceptors.push([
+    '$injector',
+    function($injector) {
+      return $injector.get('AuthInterceptor');
+    }
+  ]);
+}]);
 
 //监控路由变化
 App.run(['$state', '$rootScope', 'AuthService', function($state, $rootScope, AuthService) {

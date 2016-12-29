@@ -1,0 +1,79 @@
+{
+    "code": 2000,
+    "msg": "OK",
+    "page_info": {
+        "total": 100,
+        "has_next": true
+    },
+    "data": [
+        {
+        "lifeName": "广州生活馆1号馆",
+        "vipId": "000001",
+        "vipNo": "1",
+        "mallName": "吉克俊依",
+        "mallId": "mall1234",
+        "mobile": "18938485381",
+        "vipType": "家庭卡",
+        "vipCardTypeId": "000012",
+        "cardName": "如风哥哥",
+        "vipPrice": "1000",
+        "vipBuyPrice": "899",
+        "vipStatus": "0",
+        "buyTime": "2016-02-29",
+        "activeTime": "2016-02-29",
+        "remainingDay": "8",
+        "isJdCard": "0",
+        "trainerName": "郭会仙",
+        "lifeId": "111",
+        "vipId": "000111",
+        "trainerID": "0104"
+
+    },
+     {
+        "lifeName": "广州生活馆1号馆",
+        "vipId": "000002",
+        "vipNo": "2",
+        "mallName": "吉克俊依",
+        "mallId": "mall1234",
+        "mobile": "18938485381",
+        "vipType": "家庭卡",
+        "vipCardTypeId": "000012",
+        "cardName": "如风哥哥",
+        "vipPrice": "1000",
+        "vipBuyPrice": "899",
+        "vipStatus": "1",
+        "buyTime": "2016-02-29",
+        "activeTime": "2016-02-29",
+        "remainingDay": "8",
+        "isJdCard": "1",
+        "trainerName": "无",
+        "lifeId": "222",
+        "vipId": "000222",
+        "trainerID": "0104"
+
+    },
+     {
+        "lifeName": "广州生活馆1号馆",
+        "vipId": "000002",
+        "vipNo": "2",
+        "mallName": "吉克俊依",
+        "mallId": "mall1234",
+        "mobile": "18938485381",
+        "vipType": "家庭卡",
+        "vipCardTypeId": "000012",
+        "cardName": "如风哥哥",
+        "vipPrice": "1000",
+        "vipBuyPrice": "899.90",
+        "vipStatus": "2",
+        "buyTime": "2016-02-29",
+        "activeTime": "2016-02-29",
+        "remainingDay": "8",
+        "isJdCard": "2",
+        "trainerName": "无",
+        "lifeId": "222",
+        "vipId": "000222",
+        "trainerID": "0104"
+
+    }
+    ]
+}

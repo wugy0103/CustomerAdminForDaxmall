@@ -1,0 +1,93 @@
+{
+    "code": 2000,
+    "msg": "OK",
+    "data": {
+        "total": 90072,
+        "cardData": [
+            {
+                "cardType": "家庭一周健康套餐",
+                "cardTypeId": "0d8e8041adfa4c8da7485d9167b5a87c",
+                "count": 15,
+                "cardTotal": 14985
+            },
+            {
+                "cardType": "家庭三个月健康套餐",
+                "cardTypeId": "11823466d5fa4389a4a41a356699f0e5",
+                "count": 0,
+                "cardTotal": 0
+            },
+            {
+                "cardType": "国庆个人单次健康套餐 ",
+                "cardTypeId": "347f209ddd8941f3af5a56e5c6457cbb",
+                "count": 0,
+                "cardTotal": 0
+            },
+            {
+                "cardType": "个人一周健康套餐",
+                "cardTypeId": "393c7d4af9854a9a839d61f6bc13f60b",
+                "count": 5,
+                "cardTotal": 3495
+            },
+            {
+                "cardType": "国庆个人一周健康套餐 ",
+                "cardTypeId": "87fdcd26219f4f6bb76c1519b741aed6",
+                "count": 0,
+                "cardTotal": 0
+            },
+            {
+                "cardType": "个人一个月健康套餐",
+                "cardTypeId": "8a4d9a7b4aad4091ae2a7ba467d70973",
+                "count": 2,
+                "cardTotal": 3998
+            },
+            {
+                "cardType": "国庆个人三个月健康套餐 ",
+                "cardTypeId": "9293766ff395440bb56ca0d7dbe74d88",
+                "count": 2,
+                "cardTotal": 6000
+            },
+            {
+                "cardType": "国庆家庭一周健康套餐 ",
+                "cardTypeId": "99510e9620284aaca1f7a1b8b23eafd5",
+                "count": 0,
+                "cardTotal": 0
+            },
+            {
+                "cardType": "个人单次健康套餐",
+                "cardTypeId": "a9785092133f47f89f4a8c4db725a3c8",
+                "count": 105,
+                "cardTotal": 31395
+            },
+            {
+                "cardType": "个人三个月健康套餐",
+                "cardTypeId": "b31598aa617549d58e822855c896b2b6",
+                "count": 4,
+                "cardTotal": 20000
+            },
+            {
+                "cardType": "国庆家庭三个月健康套餐 ",
+                "cardTypeId": "dc09992f1ccc4b4fb2c388a430f9b6ac",
+                "count": 0,
+                "cardTotal": 0
+            },
+            {
+                "cardType": "家庭半年健康套餐",
+                "cardTypeId": "dd25e2f8b2444b4a8d76127c3231a74e",
+                "count": 0,
+                "cardTotal": 0
+            },
+            {
+                "cardType": "国庆个人一个月健康套餐 ",
+                "cardTypeId": "e39fd06fd2b24155b0968466ab6c1938",
+                "count": 1,
+                "cardTotal": 1199
+            },
+            {
+                "cardType": "个人半年健康套餐",
+                "cardTypeId": "f1b89f994dcd4093ac54ae2620ba3686",
+                "count": 1,
+                "cardTotal": 9000
+            }
+        ]
+    }
+}

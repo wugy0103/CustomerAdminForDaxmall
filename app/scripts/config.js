@@ -68,7 +68,7 @@ App.run(['$rootScope', 'Session', function ($rootScope, Session) {
      */
     //本地开发模式
     //本机地址
-    $rootScope.BASEURL = "http://127.0.0.1:8003/";
+    $rootScope.BASEURL = "http://localhost:8003/";
     $rootScope.api = {
         //登陆接口
         login: $rootScope.BASEURL + "api/login.json",

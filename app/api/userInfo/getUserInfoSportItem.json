@@ -1,0 +1,19 @@
+{
+	"code": 2000,
+	"msg": "OK",
+	"data": [
+		{
+			"id": "1",
+			"hm_uf_userItem": "瑜伽"
+		}, {
+			"id": "2",
+			"hm_uf_userItem": "太极"
+		}, {
+			"id": "3",
+			"hm_uf_userItem": "跑步"
+		}, {
+			"id": "4",
+			"hm_uf_userItem": "篮球"
+		}
+	]
+}

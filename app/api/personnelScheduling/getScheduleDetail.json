@@ -1,0 +1,642 @@
+{
+	"code": 2000,
+	"msg": "OK",
+	"data": [
+		{
+			"month": "10",
+			"year": "2016",
+			"week": "第一周",
+			"scheduleDate": [
+				{
+					"id": "10",
+					"type": 1,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "11",
+					"type": 2,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "13",
+					"type": 3,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"month": "10",
+			"year": "2016",
+			"week": "第二周",
+			"scheduleDate": [
+				{
+					"id": "10",
+					"type": 1,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "11",
+					"type": 2,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "13",
+					"type": 3,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}
+			]
+		},
+		{
+			"month": "10",
+			"year": "2016",
+			"week": "第三周",
+			"scheduleDate": [
+				{
+					"id": "10",
+					"type": 1,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "11",
+					"type": 2,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "13",
+					"type": 3,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}
+			]
+		},
+		{
+			"month": "10",
+			"year": "2016",
+			"week": "第四周",
+			"scheduleDate": [
+				{
+					"id": "10",
+					"type": 1,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "11",
+					"type": 2,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "13",
+					"type": 3,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}
+			]
+		},
+		{
+			"month": "10",
+			"year": "2016",
+			"week": "第五周",
+			"scheduleDate": [
+				{
+					"id": "10",
+					"type": 1,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "11",
+					"type": 2,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "13",
+					"type": 3,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小苹果",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大菠萝",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大凤梨",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大雪梨",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大西瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}
+			]
+		},
+		{
+			"month": "10",
+			"year": "2016",
+			"week": "第六周",
+			"scheduleDate": [
+				{
+					"id": "10",
+					"type": 1,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "11",
+					"type": 2,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}, {
+					"id": "13",
+					"type": 3,
+					"detail": [
+						{
+							"trainerName": "大白菜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "西红柿",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大冬瓜",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "小土豆",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}, {
+							"trainerName": "大番薯",
+							"day": "10.05",
+							"trainerId": "00003",
+							"weekDay": "星期三"
+						}
+					]
+				}
+			]
+		}
+	
+	
+	
+	
+	]
+}

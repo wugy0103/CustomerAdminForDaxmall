@@ -69,7 +69,7 @@ angular.module("AdminService", [])
         authService.login = function(credentials) {
             //登录，成功后返回用户名
             return $http
-                .post($rootScope.api.login, credentials)
+                .get($rootScope.api.login, credentials)
                 .then(function(res) {
                     console.log("login", res.data)
                     if (res.data.code == 2000) {

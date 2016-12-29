@@ -1,0 +1,10 @@
+{
+    "code": 2000,
+    "msg": "OK",
+    "data": [
+        { "city_code": "11", "city_parentcode": "0", "city_name": "天河区", "city_level": 3 },
+        { "city_code": "11", "city_parentcode": "0", "city_name": "白云区", "city_level": 3 },
+        { "city_code": "11", "city_parentcode": "0", "city_name": "萝岗区", "city_level": 3 },
+        { "city_code": "11", "city_parentcode": "0", "city_name": "荔湾区", "city_level": 3 }
+    ]
+}
