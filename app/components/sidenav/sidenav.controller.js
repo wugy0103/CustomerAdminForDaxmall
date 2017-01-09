@@ -10,7 +10,7 @@ App.controller('SideNavController', function($scope, Session, msgBus,restful,toa
         $scope.userName = Session.$storage.userName;
         // 获取侧边栏
         console.log($rootScope.api.getSideNav+$rootScope.developerMode);
-        $scope.sideNavPromise = restful.fetch($rootScope.api.getSideNav+$rootScope.developerMode, "POST").then(function (res) {
+        /*$scope.sideNavPromise = restful.fetch($rootScope.api.getSideNav+$rootScope.developerMode, "POST").then(function (res) {
             console.log("sideNav:",res);
             if(res.code == 2000){
                 $scope.sideNavList = res.data[0].subNav;
@@ -19,7 +19,7 @@ App.controller('SideNavController', function($scope, Session, msgBus,restful,toa
             }
         }, function (rej) {
             console.info(rej);
-        });
+        });*/
     };
     $scope.init();
     $scope.show = function(route){

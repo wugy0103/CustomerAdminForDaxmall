@@ -24,6 +24,11 @@ App.config(['$stateProvider', '$urlRouterProvider',"$locationProvider", function
       url: '/user/login',
       templateUrl: 'views/user/login.html'
     })
+//报表模块-》订单管理
+    .state('orderManage', {
+      url: '/reportManage/orderManage',
+      templateUrl: 'views/reportManage/orderManage.html'
+    })
 }]);
 
 //promise 按钮

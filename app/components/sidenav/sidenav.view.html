@@ -1,15 +1,26 @@
-<ul class="nav nav-list side-nav panel panel-default" active-link ng-controller="SideNavController">
+<ul class="nav nav-list panel panel-default side-nav" active-link ng-controller="SideNavController">
     <li class="side-brand">
         <a href="#/">
             <div><i class="iconfont icon-shouhou side-nav-top-icon" aria-hidden="true"></i></div>
             <div class="side-title">电商售后管理系统</div>
         </a>
     </li>
-    <li  ng-repeat="sideNav in sideNavList">
-
-        <label class="top-tree tree-toggle withripple" toggle-menu><i class="fa fa-circle-thin" aria-hidden="true"><a style="color:#fff;" ng-href="{{sideNav.route}}"></i>{{sideNav.navName}}<i ng-if="sideNav.hasSub" aria-hidden="true" class="fa fa-angle-right pull-right"></i></a></label>
-        <ul class="nav nav-list tree" ng-repeat="subNav in sideNav.subNav">
-            <li><a class="withripple third-tree" ng-href="{{subNav.route}}"><i class="fa fa-circle" aria-hidden="true"></i>{{subNav.navName}}</a></li>
+    <li hide-parent="ul">
+        <label class="top-tree tree-toggle withripple" toggle-menu><i class="iconfont icon-orders" aria-hidden="true"></i>报表管理<i aria-hidden="true" class="iconfont icon-right pull-right"></i></label>
+        <ul class="nav nav-list tree">
+            <li><a class="withripple third-tree" ng-href="#/reportManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i>订单管理</a></li>
+            <li><a class="withripple third-tree" ng-href="#/orderManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i>用户管理</a></li>
+            <!--<li><a class="withripple third-tree" ng-href="#/orderManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i> 退货管理</a></li>-->
+            <!--<li><a class="withripple third-tree" ng-href="#/orderManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i>  换货管理</a></li>-->
+            <!--<li><a class="withripple third-tree" ng-href="#/orderManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i>  退款管理</a></li>-->
+            <!--<li><a class="withripple third-tree" ng-href="#/orderManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i>  举报管理</a></li>-->
+            <!--<li><a class="withripple third-tree" ng-href="#/orderManage/orderManage"><i class="iconfont icon-yuandian" aria-hidden="true"></i> 举报类型管理</a></li>-->
         </ul>
     </li>
+    <!--<li  ng-repeat="sideNav in sideNavList">-->
+        <!--<label class="top-tree tree-toggle withripple" toggle-menu><i class="iconfont icon-yuandian-thin" aria-hidden="true"><a style="color:#fff;" ng-href="{{sideNav.route}}"></i>{{sideNav.navName}}<i ng-if="sideNav.hasSub" aria-hidden="true" class="fa fa-angle-right pull-right"></i></a></label>-->
+        <!--<ul class="nav nav-list tree" ng-repeat="subNav in sideNav.subNav">-->
+            <!--<li><a class="withripple third-tree" ng-href="{{subNav.route}}"><i class="iconfont icon-yuandian" aria-hidden="true"></i>{{subNav.navName}}</a></li>-->
+        <!--</ul>-->
+    <!--</li>-->
 </ul>

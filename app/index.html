@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
     <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
     <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css" />
-    <link rel="stylesheet" href="bower_components/select2/select2.css" />
     <link rel="stylesheet" href="bower_components/ui-select/dist/select.css" />
     <link rel="stylesheet" href="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css" />
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
@@ -26,7 +25,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_von2z7e06fde7b9.css"/>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_snyvd7g62sft7qfr.css"/>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -43,7 +42,7 @@
       <div class="panel-right">
         <div ng-include="'components/header/header.view.html'"></div>
         <div ng-class="{'panel-login': isOwnPage}" ng-cloak="" class="no-print">
-          <div ui-view class="animate-fade-up"></div>
+          <div ui-view class="animate-fade-up main-view"></div>
         </div>
       </div>
     </div>
@@ -66,15 +65,7 @@
     <script src="bower_components/toastr/toastr.js"></script>
     <script src="bower_components/ngstorage/ngStorage.js"></script>
     <script src="bower_components/ngprogress/build/ngprogress.min.js"></script>
-    <script src="bower_components/select2/select2.js"></script>
-    <script src="bower_components/angular-ui-select2/src/select2.js"></script>
     <script src="bower_components/ui-select/dist/select.js"></script>
-    <script src="bower_components/checklist-model/checklist-model.js"></script>
-    <script src="bower_components/blob-polyfill/Blob.js"></script>
-    <script src="bower_components/file-saver.js/FileSaver.js"></script>
-    <script src="bower_components/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
-    <script src="bower_components/Blob/Blob.js"></script>
-    <script src="bower_components/js-xlsx/dist/xlsx.js"></script>
     <script src="bower_components/angular-socket-io/socket.js"></script>
     <script src="bower_components/angular-autodisable/angular-autodisable.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -115,7 +106,7 @@
     <script src="components/sidenav/sidenav.controller.js"></script>
     <script src="components/header/header.controller.js"></script>
     <!--components end-->
-
+    <script src="scripts/controllers/reportManage/orderManage.js"></script>
     <!--filter-->
     <script src="scripts/filters/filter.js"></script>
     <!--service-->

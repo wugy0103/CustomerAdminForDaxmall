@@ -25,6 +25,10 @@ body {
   .side-nav-top-icon {
     font-size: 120px;
   }
+  .side-title {
+    font-size: 24px;
+    color: #fff;
+  }
   .tree-toggle {
     cursor: pointer;
   }
@@ -46,13 +50,17 @@ body {
     padding: 8px 50px;
     color: #000;
   }
-
+  .icon-yuandian{
+    font-size: 12px;
+    color: #00796B;
+    margin-right: 5px;
+  }
+  .icon-orders {
+    margin-right: 5px;
+  }
 }
 .side-nav > li {
   border-bottom: 1px solid #00a392;
-  &:nth-child(2) {
-    border-top: 1px solid #00a392;
-  }
 }
 
 .nav > li > a {
@@ -75,7 +83,20 @@ body {
     color: #fff !important;
   }
 }
+//模块容器
+.main-view {
+  padding: 20px;
+  padding-right: 5px;//因为.container-fluid自带15px
+  margin-top: 70px;
+}
+//请求参数栏
+.parameter-btn {
+  padding: 10px;
+}
+//订单管理
+.orderManage {
 
+}
 
 
 .table > {
@@ -324,9 +345,7 @@ body {
 
 
 
-[ui-view] {
-  margin-top: 85px;
-}
+
 
 .background-white {
   background-color: white;
@@ -350,7 +369,9 @@ body {
 .dropdown .glyphicon-calendar {
   right: 0;
 }
-
+.form-group {
+  margin-top: 10px;
+}
 .form-group label.control-label {
   font-size: 14px;
   color: #000;
@@ -1219,10 +1240,6 @@ tags-input {
   }
 }
 
-.side-title {
-  font-size: 24px;
-  color: #fff;
-}
 
 .verify {
   border: none;
