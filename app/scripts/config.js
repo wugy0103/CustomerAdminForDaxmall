@@ -18,18 +18,18 @@ App.run(['$rootScope', 'Session', function ($rootScope, Session) {
         //身份证号
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
-    /*
+
      //开发者模式
      $rootScope.developerMode = "?accessToken=" + Session.$storage.accessToken;
      //集成环境
      //$rootScope.developerMode="";
 
      //服务器地址
-     $rootScope.BASEURL = "http://10.0.0.222:8081/";
+     $rootScope.BASEURL = "http://192.168.1.222:8080/";
      // api地址
      $rootScope.api = {
      //登陆接口
-     login: $rootScope.BASEURL + "api/login",
+     login: $rootScope.BASEURL + "login/doLogin",
      //获取省市区
      getArea: $rootScope.BASEURL + "api/region/component/getregion/",
      //获取生活馆
@@ -42,7 +42,6 @@ App.run(['$rootScope', 'Session', function ($rootScope, Session) {
      logout: "api/logout.json",
      getSideNav: $rootScope.BASEURL + "api/menu/myMenu",
      getLifeHouseList: "api/lifeHouseInFo/getLifeHouseList.json",
-     getProvinces: "api/lifeHouseInFo/getProvinces.json",
      getCitys: "api/lifeHouseInFo/getCitys.json",
      getCountys: "api/lifeHouseInFo/getCountys.json",
      getNumName: "api/lifeHouseInFo/getNumName.json",
@@ -65,10 +64,10 @@ App.run(['$rootScope', 'Session', function ($rootScope, Session) {
      getorderinfos: "api/orderManagement/getorderinfos.json",
      getVideoUploadList: "api/video/getVideoUploadList.json"
      };
-     */
+
     //本地开发模式
     //本机地址
-    $rootScope.BASEURL = "http://localhost:8003/";
+    /*$rootScope.BASEURL = "http://localhost:8003/";
     $rootScope.api = {
         //登陆接口
         login: $rootScope.BASEURL + "api/login.json",
@@ -102,5 +101,5 @@ App.run(['$rootScope', 'Session', function ($rootScope, Session) {
         getRegion: "api/memberInfo/getRegion.json",
         getorderinfos: "api/orderManagement/getorderinfos.json",
         getVideoUploadList: "api/video/getVideoUploadList.json"
-    };
+    };*/
 }]);
