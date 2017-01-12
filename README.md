@@ -1,6 +1,6 @@
-# daxmallAdmin
+# CustomerAdminForDaxmall
 
-基于angular + bootstrap + scss + gulp 售后管理系统
+基于angular + bootstrap + sass + gulp 售后管理系统
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
