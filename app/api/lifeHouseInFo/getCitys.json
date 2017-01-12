@@ -1,0 +1,10 @@
+{
+    "code": 2000,
+    "msg": "OK",
+    "data": [
+        { "city_code": "11", "city_parentcode": "0", "city_name": "广州市", "city_level": 2 },
+        { "city_code": "11", "city_parentcode": "0", "city_name": "江门市", "city_level": 2 },
+        { "city_code": "11", "city_parentcode": "0", "city_name": "中山市", "city_level": 2 },
+        { "city_code": "11", "city_parentcode": "0", "city_name": "东莞市", "city_level": 2 }
+    ]
+}

@@ -1,8 +1,13 @@
 /*
  * @Author: 唐文雍
  * @Date:   2016-04-17 11:25:27
+<<<<<<< HEAD
  * @Last Modified by:   唐文雍
  * @Last Modified time: 2016-04-27 23:48:25
+=======
+ * @Last Modified by:   wugy
+ * @Last Modified time: 2016-10-12 15:36:05
+>>>>>>> c7ae6eb8cea2d6bcfa4576f368761ab07625663b
  */
 
 'use strict';

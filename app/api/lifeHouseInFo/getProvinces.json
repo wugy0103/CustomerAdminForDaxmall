@@ -1,0 +1,10 @@
+{
+    "code": 2000,
+    "msg": "OK",
+    "data": [{
+        "regionId": "440000",
+        "regionName": "广东省",
+        "regionShortName": "广东",
+        "regionMergerName": "中国·广东省"
+    }]
+}
