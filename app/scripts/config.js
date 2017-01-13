@@ -24,10 +24,12 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
     $rootScope.api = {
         //登陆接口
         login: $rootScope.BASEURL + "login/doLogin",
-        //根据条件查询列表
+        //查询订单
         getLsSublist: $rootScope.BASEURL + "lsSub/list",
-        //根据条件查询用户
+        //查询用户
         getLsUserlist: $rootScope.BASEURL + "lsUser/list",
+        //查询退换货
+        getLsProdReturnlist: $rootScope.BASEURL + "lsProdReturn/list"
 
     };
 }]);

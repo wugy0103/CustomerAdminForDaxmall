@@ -4,57 +4,76 @@
         <section class="parameter">
             <div class="row">
                 <div class="form-group col-lg-3">
-                    <label class="col-md-4 control-label">下单时间</label>
+                    <label class="col-md-3 control-label">下单时间</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="lastLoginTimeStart"
-                               uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeStart"
-                               is-open="lastLoginTimeStartOpened.opened"
+                        <input type="text" class="form-control" name="startDate"
+                               uib-datepicker-popup="{{format}}" ng-model="data.startDate"
+                               is-open="startDateOpened.opened"
                                datepicker-options="dateOptions" show-button-bar="false">
                         <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open1()"></i>
                     </div>
                 </div>
                 <div class="form-group col-lg-3">
                     <label class="col-md-2 control-label">至</label>
-
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="lastLoginTimeEnd"
-                               uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeEnd" is-open="lastLoginTimeEndOpened.opened"
+                        <input type="text" class="form-control" name="endDate"
+                               uib-datepicker-popup="{{format}}" ng-model="data.endDate" is-open="endDateOpened.opened"
                                datepicker-options="dateOptions" show-button-bar="false">
                         <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open2()"></i>
                     </div>
                 </div>
-                <label class="col-md-4 control-label">付款时间</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" name="lastLoginTimeStart"
-                           uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeStart"
-                           is-open="lastLoginTimeStartOpened.opened"
-                           datepicker-options="dateOptions" show-button-bar="false">
-                    <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open1()"></i>
-                </div>
-            </div>
-            <div class="form-group col-lg-3">
-                <label class="col-md-2 control-label">至</label>
-
-                <div class="col-md-8">
-                    <input type="text" class="form-control" name="lastLoginTimeEnd"
-                           uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeEnd" is-open="lastLoginTimeEndOpened.opened"
-                           datepicker-options="dateOptions" show-button-bar="false">
-                    <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open2()"></i>
-                </div>
-            </div>
                 <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">用户手机号</label>
+                    <label class="col-md-3 control-label">付款时间</label>
 
                     <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="data.userMobile" name="userMobile">
+                        <input type="text" class="form-control" name="finishPayStartDate"
+                               uib-datepicker-popup="{{format}}" ng-model="data.finishPayStartDate"
+                               is-open="finishPayStartDateOpened.opened"
+                               datepicker-options="dateOptions" show-button-bar="false">
+                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open3()"></i>
                     </div>
                 </div>
-
                 <div class="form-group col-lg-3">
-                    <label class="col-md-2 control-label">用户名</label>
+                    <label class="col-md-2 control-label">至</label>
 
                     <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="data.userName" name="userName">
+                        <input type="text" class="form-control" name="finishPayEndDate"
+                               uib-datepicker-popup="{{format}}" ng-model="data.finishPayEndDate"
+                               is-open="finishPayEndDateOpened.opened"
+                               datepicker-options="dateOptions" show-button-bar="false">
+                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open4()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-3">
+                    <label class="col-md-3 control-label">售后状态</label>
+                    <div class="col-md-8">
+                        <ui-select allow-clear ng-model="data.status" name="status" theme="bootstrap">
+                            <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
+                            <ui-select-choices repeat="item.status_id as item in zhuangtai1 | filter: $select.search"
+                                               value="{{$select.selected.status_id}}">
+                                <span ng-bind-html="item.stauts | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label class="col-md-3 control-label">售后类型</label>
+                    <div class="col-md-8">
+                        <ui-select allow-clear ng-model="data.returnType" name="returnType" theme="bootstrap">
+                            <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
+                            <ui-select-choices repeat="item.status_id as item in zhuangtai2 | filter: $select.search"
+                                               value="{{$select.selected.status_id}}">
+                                <span ng-bind-html="item.stauts | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label class="col-md-3 control-label">订单编号</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="data.subNumber" name="subNumber">
                     </div>
                 </div>
             </div>
@@ -72,31 +91,37 @@
                 <thead class="table-head">
                 <tr class="active">
                     <th>序号</th>
-                    <th>用户状态</th>
-                    <th>猫号</th>
-                    <th>昵称</th>
-                    <th>是否私人教练</th>
-                    <th>真实姓名</th>
-                    <th>邮箱地址</th>
-                    <th>手机号码</th>
-                    <th>用户名</th>
-                    <th>注册时间</th>
-                    <th>用户类型</th>
+                    <th>支付时间</th>
+                    <th>商品名称</th>
+                    <th>商品单价</th>
+                    <th>退货数量</th>
+                    <th>退货原因</th>
+                    <th>需退回的猫豆</th>
+                    <th>售后类型</th>
+                    <th>售后状态</th>
+                    <th>下单时间</th>
+                    <th>商品订单号</th>
+                    <th>交易支付号</th>
+                    <th>总金额</th>
+                    <th>商家后台操作备注</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="refundList in refundData.model">
                     <td>{{$index+1}}</td>
-                    <td>{{refundList.enabled}}</td>
-                    <td>{{refundList.mallId}}</td>
-                    <td>{{refundList.nickName}}</td>
-                    <td>{{refundList.personalTrainer}}</td>
-                    <td>{{refundList.realName}}</td>
-                    <td>{{refundList.refundMail}}</td>
-                    <td>{{refundList.refundMobile}}</td>
-                    <td>{{refundList.refundName}}</td>
-                    <td>{{refundList.refundRegTime}}</td>
-                    <td>{{refundList.refundType}}</td>
+                    <td>{{refundList.payDate}}</td>
+                    <td>{{refundList.prodName}}</td>
+                    <td>{{refundList.prodPrice}}</td>
+                    <td>{{refundList.quantity}}</td>
+                    <td>{{refundList.returnDescription}}</td>
+                    <td>{{refundList.returnMallBean}}</td>
+                    <td>{{refundList.returnType}}</td>
+                    <td>{{refundList.status}}</td>
+                    <td>{{refundList.subDate}}</td>
+                    <td>{{refundList.subNumber}}</td>
+                    <td>{{refundList.subSettlementSn}}</td>
+                    <td>{{refundList.totalPrice}}</td>
+                    <td>{{refundList.operatorRemark}}</td>
                 </tr>
                 </tbody>
             </table>

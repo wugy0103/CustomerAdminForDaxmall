@@ -31,6 +31,16 @@ App.config(function($stateProvider, $urlRouterProvider) {
             url: '/reportManage/userManage',
             templateUrl: 'views/reportManage/userManage.html'
         })
+        //报表模块-》退货退款
+        .state('refundManage', {
+            url: '/reportManage/refundManage',
+            templateUrl: 'views/reportManage/refundManage.html'
+        })
+        //报表模块-》销售统计
+        .state('salesStatistics', {
+            url: '/reportManage/salesStatistics',
+            templateUrl: 'views/reportManage/salesStatistics.html'
+        })
 
 });
 
