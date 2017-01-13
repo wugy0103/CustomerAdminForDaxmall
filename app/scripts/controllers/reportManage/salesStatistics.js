@@ -23,14 +23,14 @@ App.controller("salesStatisticsController", function ($scope, ngProgressFactory,
             if(!!res.success){
                 $scope.salesData = res;
             }else {
-                toastr.error(res.message);
+              toastr.error(res.message,"服务器错误：");
             }
             $scope.progressbar.complete();
 
         }, function(rej) {
             console.log(rej);
             $scope.progressbar.complete();
-            toastr.error(rej);
+          toastr.error(rej,"请求失败：");
         });
     };
     $scope.query();

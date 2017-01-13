@@ -57,13 +57,13 @@ App.controller("refundManageController", function ($scope, ngProgressFactory, re
             if(!!res.success){
                 $scope.refundData = res;
             }else {
-                toastr.error(res.message);
+                toastr.error(res.message,"服务器错误：");
             }
             $scope.progressbar.complete();
         }, function(rej) {
             console.log(rej);
             $scope.progressbar.complete();
-            toastr.error(rej);
+            toastr.error(rej,"请求失败：");
         });
     };
     $scope.query();

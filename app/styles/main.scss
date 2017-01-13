@@ -17,7 +17,7 @@ body {
 }
 //侧边栏
 .side-nav {
-  width: 300px;
+  width: 250px;
   margin-left: -15px;
   position: fixed;
   z-index: 1001;
@@ -107,8 +107,11 @@ body {
 
 }
 .orderListDetails {
-  .form-group {
-    border: 1px solid #009688!important;
+  label {
+    font-size: 14px;
+  }
+  div.col-lg-4 {
+    margin: 5px 0;
   }
 }
 body,
@@ -258,7 +261,7 @@ h6 {
 .navbar {
   z-index: 1000;
   position: fixed;
-  left: 300px;
+  left: 250px;
   right: 0;
   top: 0;
 }
@@ -286,13 +289,13 @@ h6 {
 .panel-left {}
 
 .panel-right {
-  margin-left: 285px;
+  margin-left: 235px;
   overflow: visible;
   min-height: 500px;
 }
 
 .side-nav {
-  width: 300px;
+  width: 250px;
   margin-left: -15px;
   position: fixed;
   z-index: 1001;
@@ -360,7 +363,7 @@ h6 {
   font-size: 12px;
   color: #000;
   overflow-x: auto;
-}
+  }
 
 .table tbody {
   border-bottom: 1px solid #ddd;
@@ -861,7 +864,7 @@ textarea.variant-form-control {
 
 @media (min-width: 992px) {
   .modal-lg {
-    width: 50%;
+    width: 70%;
   }
 }
 

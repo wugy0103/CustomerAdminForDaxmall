@@ -23,14 +23,14 @@ App.controller("userManageController", function ($scope, ngProgressFactory, rest
             if(!!res.success){
                 $scope.userData = res;
             }else {
-                toastr.error(res.message);
+                toastr.error(res.message,"服务器错误：");
             }
             $scope.progressbar.complete();
 
         }, function(rej) {
             console.log(rej);
             $scope.progressbar.complete();
-            toastr.error(rej);
+            toastr.error(rej,"请求失败：");
         });
     };
     $scope.query();
