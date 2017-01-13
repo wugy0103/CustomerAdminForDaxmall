@@ -21,16 +21,16 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
 
     //服务器地址
     $rootScope.BASEURLbeta = "http://192.168.1.222:8082/";
-    $rootScope.BASEURL = "http://192.168.2.194:8080/";
+    $rootScope.BASEURL = "http://192.168.2.194:8082/";
     // api地址
     $rootScope.api = {
         //登陆接口
-        login: $rootScope.BASEURLbeta + "login/doLogin",
+        login: $rootScope.BASEURL + "login/doLogin",
 
         //根据条件查询列表
         getLsSublist: $rootScope.BASEURL + "lsSub/list",
         //根据条件导出订单
-        getLsSubexp: $rootScope.BASEURLbeta + "lsSub/exp",
+        getLsSubexp: $rootScope.BASEURL + "lsSub/exp",
 
         //目前用到的代替省份
         getProvinces: "api/lifeHouseInFo/getProvinces.json",

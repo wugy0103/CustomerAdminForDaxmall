@@ -88,7 +88,18 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
         $scope.data.pageNum = $scope.toPageNum;
         $scope.query();
     };
-
+    $scope.orderListDetails = function(items) {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'orderListDetails.html',
+            controller: 'orderListDetailsController',
+            size: "lg",
+            resolve: {
+                items: function() {
+                    return items;
+                }
+            },
+        });
+    }
     //-----------------时间控件 start-----------------------
     $scope.inlineOptions = {
         customClass: getDayClass,
@@ -177,8 +188,8 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     //-----------------时间控件  end-----------------------
 });
 //举报内容
-App.controller("ReportControllerFormbtReportDetailsController", function ($scope, $uibModalInstance, items) {
-    $scope.items = JSON.parse(items.dialoguecontent);
+App.controller("orderListDetailsController", function ($scope, $uibModalInstance, items) {
+    $scope.item = items;
     $scope.close = function () {
         $uibModalInstance.dismiss('close');
     };
