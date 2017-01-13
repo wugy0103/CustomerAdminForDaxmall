@@ -6,58 +6,22 @@
  */
 
 'use strict';
-App.controller("orderManageController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr) {
+App.controller("salesStatisticsController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr,$http) {
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.data = {};
-    $scope.zhuangtai1 = [{
-        stauts: "海外订单",
-        status_id: "O"
-    }, {
-        stauts: "国内订单",
-        status_id: "N"
-    }];
-    $scope.zhuangtai2 = [{
-        stauts: "未付款",
-        status_id: "1"
-    }, {
-        stauts: "待发货",
-        status_id: "2"
-    }, {
-        stauts: "已发货",
-        status_id: "3"
-    }, {
-        stauts: "交易成功",
-        status_id: "4"
-    }, {
-        stauts: "交易失败",
-        status_id: "5"
-    }];
-    $scope.zhuangtai3 = [{
-        stauts: "正常订单",
-        status_id: "N"
-    }, {
-        stauts: "定金",
-        status_id: "D"
-    }, {
-        stauts: "尾款",
-        status_id: "F"
-    }];
     //分页
     $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
     $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;
-
     //加载
     $scope.query = function () {
-        $scope.data.startDate = new Date($scope.data.startDate).setHours("00", "00", "00");
-        $scope.data.endDate = new Date($scope.data.endDate).setHours("23", "59", "59");
-        $scope.data.finishPayStartDate = new Date($scope.data.finishPayStartDate).setHours("00", "00", "00");
-        $scope.data.finishPayEndDate = new Date($scope.data.finishPayEndDate).setHours("23", "59", "59");
+        $scope.data.paystartDate = new Date($scope.data.paystartDate).setHours("00", "00", "00");
+        $scope.data.payendDate = new Date($scope.data.payendDate).setHours("23", "59", "59");
         $scope.progressbar.start();
-        $scope.orderPromise = restful.fetch($rootScope.api.getLsSublist, "POST", $scope.data).then(function(res) {
-            console.log("param",$scope.data)
-            console.log(res)
+        $scope.salesPromise = restful.fetch($rootScope.api.getLsSubCountlist, "POST", $scope.data).then(function(res) {
+            console.log("salesparam",$scope.data)
+            console.log("sales",res)
             if(!!res.success){
-                $scope.orderData = res;
+                $scope.salesData = res;
             }else {
                 toastr.error(res.message);
             }
@@ -88,18 +52,6 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
         $scope.data.pageNum = $scope.toPageNum;
         $scope.query();
     };
-    $scope.orderListDetails = function(items) {
-        var modalInstance = $uibModal.open({
-            templateUrl: 'orderListDetails.html',
-            controller: 'orderListDetailsController',
-            size: "lg",
-            resolve: {
-                items: function() {
-                    return items;
-                }
-            },
-        });
-    }
     //-----------------时间控件 start-----------------------
     $scope.inlineOptions = {
         customClass: getDayClass,
@@ -121,50 +73,18 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     $scope.toggleMin();
     //点击open1的时候
     $scope.open1 = function () {
-        $scope.startDateOpened.opened = true;
+        $scope.paystartDateOpened.opened = true;
     };
     //点击open2的时候
     $scope.open2 = function () {
-        $scope.endDateOpened.opened = true;
+        $scope.payendDateOpened.opened = true;
     };
-    //点击open3的时候
-    $scope.open3 = function () {
-        $scope.finishPayStartDateOpened.opened = true;
-    };
-    //点击open4的时候
-    $scope.open4 = function () {
-        debugger
-        $scope.finishPayEndDateOpened.opened = true;
-    };
-    $scope.startDateOpened = {
+    $scope.paystartDateOpened = {
         opened: false
     };
-    $scope.endDateOpened = {
+    $scope.payendDateOpened = {
         opened: false
     };
-    $scope.finishPayStartDateOpened = {
-        opened: false
-    };
-    $scope.finishPayEndDateOpened = {
-        opened: false
-    };
-    //月份开始
-    $scope.setDate = function (year, month, day) {
-        $scope.startMonth = new Date(year, month, day);
-    };
-    //月份结束
-    $scope.setDate = function (year, month, day) {
-        $scope.endMonth = new Date(year, month, day);
-    };
-    //审核日期开始
-    $scope.setDate = function (year, month, day) {
-        $scope.startShTime = new Date(year, month, day);
-    };
-    //审核日期结束
-    $scope.setDate = function (year, month, day) {
-        $scope.endShTime = new Date(year, month, day);
-    };
-
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'yyyy-MM-dd'];
     $scope.format = $scope.formats[4];
 
@@ -186,11 +106,4 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     }
 
     //-----------------时间控件  end-----------------------
-});
-//举报内容
-App.controller("orderListDetailsController", function ($scope, $uibModalInstance, items) {
-    $scope.item = items;
-    $scope.close = function () {
-        $uibModalInstance.dismiss('close');
-    };
 });

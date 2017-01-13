@@ -1,0 +1,20 @@
+{
+  "message": "测试内容pv4h",
+  "model": [
+    {
+      "averagePrice": 51578,
+      "commoditySum": 54777,
+      "date": "测试内容0438",
+      "subSum": 46154,
+      "sumMoney": 15176
+    }
+  ],
+  "query": {
+    "pageNum": 35446,
+    "pageSize": 34280,
+    "pages": 54872,
+    "total": 66852
+  },
+  "resultCode": "测试内容jib2",
+  "success": false
+}

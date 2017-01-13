@@ -1,7 +1,6 @@
 /**
  * Created by wugy on 2016/12/28.
  */
-
 'use strict';
 App.run(['$rootScope', 'Session', function ($rootScope) {
     //分页配置
@@ -18,8 +17,9 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
     //服务器地址
-    $rootScope.BASEURLbeta = "http://192.168.1.222:8082/";
+    $rootScope.BASEURLbeta = "http://192.168.1.243:8082/";
     $rootScope.BASEURL = "http://192.168.2.194:8082/";
+    $rootScope.BASEURLlocal = "http://192.168.1.244:3002/";
     // api地址
     $rootScope.api = {
         //登陆接口
@@ -29,7 +29,8 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         //查询用户
         getLsUserlist: $rootScope.BASEURL + "lsUser/list",
         //查询退换货
-        getLsProdReturnlist: $rootScope.BASEURL + "lsProdReturn/list"
-
+        getLsProdReturnlist: $rootScope.BASEURL + "lsProdReturn/list",
+        //销售统计
+        getLsSubCountlist: $rootScope.BASEURLbeta + "lsSubCount/list"
     };
 }]);

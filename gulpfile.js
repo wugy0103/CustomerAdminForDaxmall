@@ -78,7 +78,8 @@ gulp.task('start:server', function() {
     root: [yeoman.app, '.tmp'],
     livereload: true,//自动刷新
     // Change this to '0.0.0.0' to access the server from outside.
-    port: 3002
+    port: 3002,
+    AllowControlAllowOrigin: "*"
   });
 });
 
