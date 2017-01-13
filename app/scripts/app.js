@@ -26,6 +26,11 @@ App.config(function($stateProvider, $urlRouterProvider) {
             url: '/reportManage/orderManage',
             templateUrl: 'views/reportManage/orderManage.html'
         })
+        //报表模块-》用户管理
+        .state('userManage', {
+            url: '/reportManage/userManage',
+            templateUrl: 'views/reportManage/userManage.html'
+        })
 
 });
 

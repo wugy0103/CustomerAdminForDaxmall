@@ -3,7 +3,6 @@
  */
 
 'use strict';
-
 App.run(['$rootScope', 'Session', function ($rootScope) {
     //分页配置
     $rootScope.PAGINATION_CONFIG = {
@@ -18,7 +17,6 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         //身份证号
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
-
     //服务器地址
     $rootScope.BASEURLbeta = "http://192.168.1.222:8082/";
     $rootScope.BASEURL = "http://192.168.2.194:8082/";
@@ -26,17 +24,10 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
     $rootScope.api = {
         //登陆接口
         login: $rootScope.BASEURL + "login/doLogin",
-
         //根据条件查询列表
         getLsSublist: $rootScope.BASEURL + "lsSub/list",
-        //根据条件导出订单
-        getLsSubexp: $rootScope.BASEURL + "lsSub/exp",
-
-        //目前用到的代替省份
-        getProvinces: "api/lifeHouseInFo/getProvinces.json",
-        //当月销售额与之前11个月销售额对比
-        getMonthCompare: $rootScope.BASEURL+"api/report/vips/summary/moncompare"+$rootScope.developerMode
+        //根据条件查询用户
+        getLsUserlist: $rootScope.BASEURL + "lsUser/list",
 
     };
-
 }]);

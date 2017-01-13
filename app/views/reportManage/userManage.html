@@ -1,0 +1,108 @@
+<article ng-controller="userManageController" class="userManage">
+    <!-- 上部分 -->
+    <form action="http://192.168.2.194:8082/lsUser/exportExcel" method="POST" ng-enter="search()">
+        <section class="parameter">
+            <div class="row">
+                <div class="form-group col-lg-3">
+                    <label class="col-md-4 control-label">最后登录时间</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="lastLoginTimeStart"
+                               uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeStart"
+                               is-open="lastLoginTimeStartOpened.opened"
+                               datepicker-options="dateOptions" show-button-bar="false">
+                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open1()"></i>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label class="col-md-2 control-label">至</label>
+
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="lastLoginTimeEnd"
+                               uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeEnd" is-open="lastLoginTimeEndOpened.opened"
+                               datepicker-options="dateOptions" show-button-bar="false">
+                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open2()"></i>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label class="col-md-3 control-label">用户手机号</label>
+
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="data.userMobile" name="userMobile">
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-3">
+                    <label class="col-md-2 control-label">用户名</label>
+
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="data.userName" name="userName">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="parameter-btn">
+            <button type="button" class="btn btn-raised btn-primary" ng-click="search()">查询</button>
+            <button type="button" class="btn btn-raised btn-default" ng-click="reset()">重置查询条件</button>
+            <button type="submit" class="btn btn-raised btn-detault">导出</button>
+        </div>
+    </form>
+    <!-- 下部分 -->
+    <section>
+        <div class="table-responsive">
+            <table class="table table-hover" float-thead="floatTheadOptions">
+                <thead class="table-head">
+                <tr class="active">
+                    <th>序号</th>
+                    <th>用户状态</th>
+                    <th>猫号</th>
+                    <th>昵称</th>
+                    <th>是否私人教练</th>
+                    <th>真实姓名</th>
+                    <th>邮箱地址</th>
+                    <th>手机号码</th>
+                    <th>用户名</th>
+                    <th>注册时间</th>
+                    <th>用户类型</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="userList in userData.model">
+                    <td>{{$index+1}}</td>
+                    <td>{{userList.enabled}}</td>
+                    <td>{{userList.mallId}}</td>
+                    <td>{{userList.nickName}}</td>
+                    <td>{{userList.personalTrainer}}</td>
+                    <td>{{userList.realName}}</td>
+                    <td>{{userList.userMail}}</td>
+                    <td>{{userList.userMobile}}</td>
+                    <td>{{userList.userName}}</td>
+                    <td>{{userList.userRegTime}}</td>
+                    <td>{{userList.userType}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div ng-if="!userData.model.length" class="noData text-center">暂无数据</div>
+        </div>
+        <section style="margin:0 0 10px 5px;">本次查询结果共 <strong>{{userData.query.total || 0}}</strong>个订单</section>
+        <div class="row">
+            <div class="col-md-9">
+                <select class="page-size" ng-model="data.pageSize" ng-change="pageChanged()">
+                    <option value="20" ng-selected="true">每页显示20条</option>
+                    <option value="40">每页显示40条</option>
+                    <option value="60">每页显示60条</option>
+                    <option value="80">每页显示80条</option>
+                    <option value="100">每页显示100条</option>
+                </select>
+                <uib-pagination ng-change="pageChanged()" ng-model="data.pageNum" total-items="userData.query.total"
+                                max-size="maxSize" items-per-page="data.pageSize" class="pagination-sm"
+                                boundary-link-numbers="true"
+                                rotate="false" previous-text="上一页" next-text="下一页"></uib-pagination>
+            </div>
+            <div class="col-md-3 text-right">
+                <span>跳转到</span>
+                <input type="text" ng-model="toPageNum" class="variant-form-control">
+                <button ng-click="setPage()" class="to-page-num">确定</button>
+            </div>
+        </div>
+    </section>
+</article>

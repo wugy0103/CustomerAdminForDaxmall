@@ -6,7 +6,7 @@
  */
 
 'use strict';
-App.controller("orderManageController", function ($scope, ngProgressFactory, restful, $rootScope, Session, $uibModal, toastr) {
+App.controller("orderManageController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr) {
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.data = {};
     $scope.zhuangtai1 = [{
