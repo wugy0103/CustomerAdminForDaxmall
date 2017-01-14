@@ -17,7 +17,7 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
     //服务器地址
-    $rootScope.BASEURLbeta = "http://192.168.1.243:8082/";
+    $rootScope.BASEURLbeta = "http://192.168.1.243:8080/";
     $rootScope.BASEURL = "http://192.168.2.194:8082/";
     $rootScope.BASEURLlocal = "http://192.168.1.244:3002/";
     // api地址

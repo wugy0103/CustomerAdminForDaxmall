@@ -4,7 +4,7 @@
 
 'use strict';
 var App, modules;
-modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'checklist-model', 'angularPromiseButtons', 'AdminFilters','AdminService', "ui.bootstrap", 'ngStorage', 'angular-confirm', 'toastr', 'ngTagsInput', 'ui.tree', 'angularMoment'];//"cgBusy", , 'ui.bootstrap.datetimepicker'删掉
+modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'angularPromiseButtons', 'AdminFilters','AdminService', "ui.bootstrap", 'ngStorage', 'angular-confirm', 'toastr'];//"cgBusy", , 'ui.bootstrap.datetimepicker'删掉
 App = angular.module('CustomerAdminForDaxmall', modules);
 
 //路由配置

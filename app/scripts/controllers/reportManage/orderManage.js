@@ -133,7 +133,6 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     };
     //点击open4的时候
     $scope.open4 = function () {
-        debugger
         $scope.finishPayEndDateOpened.opened = true;
     };
     $scope.startDateOpened = {
