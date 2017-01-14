@@ -16,15 +16,7 @@ App.controller('HeaderController', function($scope, $state, restful, Session, ms
     };
     $scope.init();
     $scope.logout = function() {
-        restful.fetch($rootScope.api.logout,"POST",{userName:$scope.userName}).then(function(res) {
-            console.log("logout",res)
             Session.destroy();
-            console.log(Session);
-            if(res.code == 2000){
-                $state.go('login');
-            }
-        }, function(rej) {
-            console.info(rej);
-        });
+        $state.go('login');
     };
 });
