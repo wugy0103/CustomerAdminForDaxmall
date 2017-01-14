@@ -4,11 +4,12 @@
 
 'use strict';
 var App, modules;
-modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'angularPromiseButtons', 'AdminFilters','AdminService', "ui.bootstrap", 'ngStorage', 'angular-confirm', 'toastr'];//"cgBusy", , 'ui.bootstrap.datetimepicker'删掉
+modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'angularPromiseButtons', 'AdminFilters','AdminService', "ui.bootstrap", 'ngStorage', 'angular-confirm', 'toastr'];
 App = angular.module('CustomerAdminForDaxmall', modules);
 
 //路由配置
-App.config(function($stateProvider, $urlRouterProvider) {
+App.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
+    $locationProvider.hashPrefix('');//新的ngRoute中默认的路由分割符号是#!，已经不是#了,这句话就是用回#。
     $urlRouterProvider.otherwise('/User/Login');
     $stateProvider.state('dashboard', {
             url: '/',
@@ -79,7 +80,7 @@ App.config(function($httpProvider) {
 
 //监控路由变化
 App.run(function($state, $rootScope, AuthService) {
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeStart', function(event, toState) {
         //判断是否是不包括头部和侧栏的页面
         $rootScope.isOwnPage = _.contains(["login"], toState.name);
         //路由拦截，无权限则跳转到登录界面

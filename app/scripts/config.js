@@ -16,10 +16,11 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         //身份证号
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
-    //服务器地址
+    //开发地址
     $rootScope.BASEURLbeta = "http://192.168.1.243:8080/";
     $rootScope.BASEURL = "http://192.168.2.194:8082/";
-    $rootScope.BASEURLlocal = "http://192.168.1.244:3002/";
+    //服务器地址
+    //$rootScope.BASEURL = "http://10.0.0.180:8082/";
     // api地址
     $rootScope.api = {
         //登陆接口
