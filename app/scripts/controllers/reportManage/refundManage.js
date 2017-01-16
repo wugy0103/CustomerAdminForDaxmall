@@ -44,6 +44,7 @@ App.controller("refundManageController", function ($scope, ngProgressFactory, re
     //分页
     $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
     $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;
+    $scope.maxSize= $rootScope.PAGINATION_CONFIG.MAXSIZE;
     //加载
     $scope.query = function () {
         $scope.data.startDate = new Date($scope.data.startDate).setHours("00", "00", "00");

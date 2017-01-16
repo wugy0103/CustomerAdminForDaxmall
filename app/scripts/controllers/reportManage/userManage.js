@@ -12,6 +12,7 @@ App.controller("userManageController", function ($scope, ngProgressFactory, rest
     //分页
     $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
     $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;
+    $scope.maxSize= $rootScope.PAGINATION_CONFIG.MAXSIZE;
     //加载
     $scope.query = function () {
         $scope.data.lastLoginTimeStart = new Date($scope.data.lastLoginTimeStart).setHours("00", "00", "00");
