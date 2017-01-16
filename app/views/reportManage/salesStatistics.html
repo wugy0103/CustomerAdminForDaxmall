@@ -37,9 +37,9 @@
                 <thead class="table-head">
                 <tr class="active">
                     <th>序号</th>
+                    <th>日期</th>
                     <th>客单价</th>
                     <th>商品数量</th>
-                    <th>日期</th>
                     <th>订单数</th>
                     <th>订单总额</th>
                 </tr>
@@ -47,9 +47,9 @@
                 <tbody>
                 <tr ng-repeat="salesList in salesData.model">
                     <td>{{$index+1}}</td>
+                    <td>{{salesList.date}}</td>
                     <td>{{salesList.averagePrice}}</td>
                     <td>{{salesList.commoditySum}}</td>
-                    <td>{{salesList.date}}</td>
                     <td>{{salesList.subSum}}</td>
                     <td>{{salesList.sumMoney}}</td>
                 </tr>
@@ -57,7 +57,7 @@
             </table>
             <div ng-if="!salesData.model.length" class="noData text-center">暂无数据</div>
         </div>
-        <section style="margin:0 0 10px 5px;">本次查询结果共 <strong>{{salesData.query.total || 0}}</strong>个订单</section>
+        <section style="margin:0 0 10px 5px;">本次查询共 <strong>{{salesData.query.total || 0}}</strong>个结果</section>
         <div class="row">
             <div class="col-md-9">
                 <select class="page-size" ng-model="data.pageSize" ng-change="pageChanged()">

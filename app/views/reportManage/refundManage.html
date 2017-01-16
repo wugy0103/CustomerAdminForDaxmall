@@ -129,7 +129,7 @@
             </table>
             <div ng-if="!refundData.model.length" class="noData text-center">暂无数据</div>
         </div>
-        <section style="margin:0 0 10px 5px;">本次查询结果共 <strong>{{refundData.query.total || 0}}</strong>个订单</section>
+        <section style="margin:0 0 10px 5px;">本次查询共 <strong>{{refundData.query.total || 0}}</strong>个结果</section>
         <div class="row">
             <div class="col-md-9">
                 <select class="page-size" ng-model="data.pageSize" ng-change="pageChanged()">
