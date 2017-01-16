@@ -8,8 +8,9 @@ modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'angularPromise
 App = angular.module('CustomerAdminForDaxmall', modules);
 
 //路由配置
-App.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
+App.config(function($stateProvider, $urlRouterProvider,$locationProvider,$qProvider) {
     $locationProvider.hashPrefix('');//新的ngRoute中默认的路由分割符号是#!，已经不是#了,这句话就是用回#。
+    $qProvider.errorOnUnhandledRejections(false);//解决新的ngRoute 报错Possibly unhandled rejection: {}
     $urlRouterProvider.otherwise('/User/Login');
     $stateProvider.state('dashboard', {
             url: '/',

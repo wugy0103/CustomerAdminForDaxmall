@@ -54,29 +54,30 @@
                     <label class="col-md-3 control-label">订单性质</label>
 
                     <div class="col-md-8">
-                        <ui-select allow-clear ng-model="data.isOverseaOrder" name="isOverseaOrder" theme="bootstrap">
+                        <ui-select allow-clear ng-model="data.isOverseaOrder" theme="bootstrap">
                             <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
-                            <ui-select-choices name="isOverseaOrder"
-                                               repeat="item.status_id as item in zhuangtai1 | filter: $select.search"
+                            <ui-select-choices repeat="item.status_id as item in zhuangtai1 | filter: $select.search"
                                                value="{{$select.selected.status_id}}">
                                 <span ng-bind-html="item.stauts | highlight: $select.search"></span>
                             </ui-select-choices>
                         </ui-select>
                     </div>
+                    <input type="hidden" name="isOverseaOrder" value="{{data.isOverseaOrder}}" />
                 </div>
 
                 <div class="form-group col-lg-3">
                     <label class="col-md-3 control-label">订单状态</label>
 
                     <div class="col-md-8">
-                        <ui-select allow-clear ng-model="data.status" name="status" theme="bootstrap">
-                            <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
+                        <ui-select allow-clear ng-model="data.status" theme="bootstrap">
+                            <ui-select-match >{{$select.selected.stauts}}</ui-select-match>
                             <ui-select-choices repeat="item.status_id as item in zhuangtai2 | filter: $select.search"
                                                value="{{$select.selected.status_id}}">
                                 <span ng-bind-html="item.stauts | highlight: $select.search"></span>
                             </ui-select-choices>
                         </ui-select>
                     </div>
+                    <input type="hidden" name="status" value="{{data.status}}"/>
                 </div>
 
                 <div class="form-group col-lg-3">
@@ -91,7 +92,7 @@
                     <label class="col-md-3 control-label">订单类型</label>
 
                     <div class="col-md-8">
-                        <ui-select allow-clear ng-model="data.subType" name="subType" theme="bootstrap">
+                        <ui-select allow-clear ng-model="data.subType" theme="bootstrap">
                             <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
                             <ui-select-choices repeat="item.status_id as item in zhuangtai3 | filter: $select.search"
                                                value="{{$select.selected.status_id}}">
@@ -99,6 +100,7 @@
                             </ui-select-choices>
                         </ui-select>
                     </div>
+                    <input type="hidden" value="{{data.subType}}" name="subType"/>
                 </div>
 
                 <div class="form-group col-lg-3">
