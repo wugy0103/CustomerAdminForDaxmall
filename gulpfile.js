@@ -1,4 +1,7 @@
-// Generated on 2016-12-26 using generator-angular 0.15.1
+/**
+ * Created by wugy on 2016/12/28.
+ */
+
 'use strict';
 // 加载gulp，以及gulp的插件（以gulp-开头所有的插件），和其他相关插件
 var gulp = require('gulp');
@@ -124,7 +127,7 @@ gulp.task('serve:prod', function() {
   $.connect.server({
     root: [yeoman.dist],
     livereload: true,
-    port: 3002
+    port: 3003
   });
 });
 
@@ -163,6 +166,7 @@ gulp.task('client:build', ['html','componentsHtml', 'styles'], function () {
     .pipe($.useref({searchPath: [yeoman.app, '.tmp']}))//gulp-useref：处理html中js或css占位符替换成真正的资源索引
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
+    .pipe($.stripDebug())//gulp-strip-debug:去debugger,console.log();
     .pipe($.uglify())//gulp-uglify：js压缩神器
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
@@ -203,8 +207,13 @@ gulp.task('copy:fonts', function () {
     .pipe(gulp.dest(yeoman.dist + '/fonts'));
 });
 
+gulp.task('copy:ico', function () {
+    return gulp.src(yeoman.app + '/favicon.ico')
+        .pipe(gulp.dest(yeoman.dist));
+});
+
 gulp.task('build', ['clean:dist'], function () {
-  runSequence(['images', 'copy:extras', 'copy:fonts', 'client:build']);
+  runSequence(['images', 'copy:extras', 'copy:fonts','copy:ico', 'client:build']);
 });
 
 gulp.task('default', ['build']);
