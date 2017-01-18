@@ -6,13 +6,17 @@
  */
 
 'use strict';
-App.controller("salesStatisticsController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr,$http) {
+App.controller("salesStatisticsController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr,$sce) {
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.data = {};
     //分页
     $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
     $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;
     $scope.maxSize= $rootScope.PAGINATION_CONFIG.MAXSIZE;
+    //url安全转义
+    $scope.sce = {
+        exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsSubCountexp),
+    }
     //加载
     $scope.query = function () {
         $scope.data.paystartDate = new Date($scope.data.paystartDate).setHours("00", "00", "00");

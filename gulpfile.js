@@ -31,7 +31,7 @@ var paths = {
   karma: 'karma.conf.js',
   views: {
     main: yeoman.app + '/index.html',
-    files: [yeoman.app + '/views/**/*.html']
+    files: [yeoman.app + '/views/**/*.html',yeoman.app + '/components/**/*.html']
   }
 };
 
@@ -155,7 +155,7 @@ gulp.task('clean:dist', function (cb) {
   rimraf('./dist', cb);
 });
 
-gulp.task('client:build', ['html', 'styles'], function () {
+gulp.task('client:build', ['html','componentsHtml', 'styles'], function () {
   var jsFilter = $.filter('**/*.js');//gulp-filter：文件匹配神器
   var cssFilter = $.filter('**/*.css');
 
@@ -176,6 +176,11 @@ gulp.task('client:build', ['html', 'styles'], function () {
 gulp.task('html', function () {
   return gulp.src(yeoman.app + '/views/**/*')
     .pipe(gulp.dest(yeoman.dist + '/views'));
+});
+
+gulp.task('componentsHtml', function () {
+  return gulp.src(yeoman.app + '/components/**/*')
+      .pipe(gulp.dest(yeoman.dist + '/components'));
 });
 
 gulp.task('images', function () {

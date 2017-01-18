@@ -6,7 +6,7 @@
  */
 
 'use strict';
-App.controller("orderManageController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr) {
+App.controller("orderManageController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr,$sce) {
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.data = {};
     $scope.zhuangtai1 = [{
@@ -46,6 +46,10 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
     $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;
     $scope.maxSize= $rootScope.PAGINATION_CONFIG.MAXSIZE;
+    //url安全转义
+    $scope.sce = {
+        exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsSubexp),
+    }
     //加载
     $scope.query = function () {
         $scope.data.startDate = new Date($scope.data.startDate).setHours("00", "00", "00");

@@ -18,20 +18,28 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
     };
     //开发地址
     $rootScope.BASEURLbeta = "http://192.168.1.243:8080/";
-    //$rootScope.BASEURL = "http://192.168.2.194:8082/";
+    $rootScope.BASEURL = "http://192.168.2.194:8082/";
     //服务器地址
-    $rootScope.BASEURL = "http://test.customer.daxmall.com/";
+    //$rootScope.BASEURL = "http://test.customer.daxmall.com/";
     // api地址
     $rootScope.api = {
         //登陆接口
         login: $rootScope.BASEURL + "login/doLogin",
         //查询订单
         getLsSublist: $rootScope.BASEURL + "lsSub/list",
+        //导出订单
+        getLsSubexp: $rootScope.BASEURL + "lsSub/exp",
         //查询用户
         getLsUserlist: $rootScope.BASEURL + "lsUser/list",
+        //导出用户
+        getLsUserexportExcel: $rootScope.BASEURL + "lsUser/exportExcel",
         //查询退换货
         getLsProdReturnlist: $rootScope.BASEURL + "lsProdReturn/list",
+        //导出退换货
+        getLsProdReturnexp: $rootScope.BASEURL + "lsProdReturn/exp",
         //销售统计
-        getLsSubCountlist: $rootScope.BASEURL + "lsSubCount/list"
+        getLsSubCountlist: $rootScope.BASEURLbeta + "lsSubCount/list",
+        //导出销售统计
+        getLsSubCountexp: $rootScope.BASEURLbeta + "lsSubCount/exp"
     };
 }]);
