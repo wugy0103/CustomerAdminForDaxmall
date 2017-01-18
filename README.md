@@ -15,7 +15,7 @@ version 0.15.1.
 
 Run `gulp` for building and `gulp serve` for preview.
 
-###待完善
+### 待完善
 
 1.打包时bower_components目录指向根目录，开发时bower_components目录指向/app目录。
 
