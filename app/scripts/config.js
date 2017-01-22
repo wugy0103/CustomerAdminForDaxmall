@@ -21,6 +21,7 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
     $rootScope.BASEURL = "http://192.168.2.194:8082/";
     //服务器地址
     //$rootScope.BASEURL = "http://test.customer.daxmall.com/";
+    //$rootScope.BASEURL = "http://customer.daxmall.com/";
     // api地址
     $rootScope.api = {
         //登陆接口
@@ -38,8 +39,8 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         //导出退换货
         getLsProdReturnexp: $rootScope.BASEURL + "lsProdReturn/exp",
         //销售统计
-        getLsSubCountlist: $rootScope.BASEURLbeta + "lsSubCount/list",
+        getLsSubCountlist: $rootScope.BASEURL + "lsSubCount/list",
         //导出销售统计
-        getLsSubCountexp: $rootScope.BASEURLbeta + "lsSubCount/exp"
+        getLsSubCountexp: $rootScope.BASEURL + "lsSubCount/exp"
     };
 }]);
