@@ -151,23 +151,6 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     $scope.finishPayEndDateOpened = {
         opened: false
     };
-    //月份开始
-    $scope.setDate = function (year, month, day) {
-        $scope.startMonth = new Date(year, month, day);
-    };
-    //月份结束
-    $scope.setDate = function (year, month, day) {
-        $scope.endMonth = new Date(year, month, day);
-    };
-    //审核日期开始
-    $scope.setDate = function (year, month, day) {
-        $scope.startShTime = new Date(year, month, day);
-    };
-    //审核日期结束
-    $scope.setDate = function (year, month, day) {
-        $scope.endShTime = new Date(year, month, day);
-    };
-
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'yyyy-MM-dd'];
     $scope.format = $scope.formats[4];
 
