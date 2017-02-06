@@ -1,20 +1,20 @@
 {
-  "message": "测试内容pv4h",
+  "message": "测试内容d3w6",
   "model": [
     {
-      "averagePrice": 51578,
-      "commoditySum": 54777,
-      "date": "测试内容0438",
-      "subSum": 46154,
-      "sumMoney": 15176
+      "averagePrice": 32283,
+      "commoditySum": 20186,
+      "date": "测试内容m2ln",
+      "subSum": 41425,
+      "sumMoney": 31678
     }
   ],
   "query": {
-    "pageNum": 35446,
-    "pageSize": 34280,
-    "pages": 54872,
-    "total": 66852
+    "pageNum": 73213,
+    "pageSize": 50616,
+    "pages": 64686,
+    "total": 84464
   },
-  "resultCode": "测试内容jib2",
-  "success": false
+  "resultCode": "测试内容3bi6",
+  "success": true
 }

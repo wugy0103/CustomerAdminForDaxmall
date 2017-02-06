@@ -50,15 +50,19 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     $scope.sce = {
         exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsSubexp),
     }
+    //时间转时间戳
+    $scope.OnSetTime = function () {
+        $scope.data.startDate = new Date($scope.startDate).getTime();
+        $scope.data.endDate = new Date($scope.endDate).getTime();
+        $scope.data.finishPayStartDate = new Date($scope.finishPayStartDate).getTime();
+        $scope.data.finishPayEndDate = new Date($scope.finishPayEndDate).getTime();
+    }
     //加载
     $scope.query = function () {
-        $scope.data.startDate = new Date($scope.data.startDate).setHours("00", "00", "00");
-        $scope.data.endDate = new Date($scope.data.endDate).setHours("23", "59", "59");
-        $scope.data.finishPayStartDate = new Date($scope.data.finishPayStartDate).setHours("00", "00", "00");
-        $scope.data.finishPayEndDate = new Date($scope.data.finishPayEndDate).setHours("23", "59", "59");
         $scope.progressbar.start();
+        console.log("param",$scope.data)
         $scope.orderPromise = restful.fetch($rootScope.api.getLsSublist, "POST", $scope.data).then(function(res) {
-            console.log("param",$scope.data)
+
             console.log(res)
             if(!!res.success){
                 $scope.orderData = res;
@@ -70,7 +74,7 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
         }, function(rej) {
             console.log(rej);
             $scope.progressbar.complete();
-            toastr.error(rej,"请求失败：");
+            toastr.error(rej.status+"("+rej.statusText+")","请求失败：");
         });
     };
     $scope.query();
@@ -104,74 +108,6 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
             },
         });
     }
-    //-----------------时间控件 start-----------------------
-    $scope.inlineOptions = {
-        customClass: getDayClass,
-        minDate: new Date(),
-        showWeeks: false,
-    };
-
-    $scope.dateOptions = {
-        maxDate: new Date(2020, 5, 22),
-        minDate: new Date(),
-        startingDay: 1,
-        showWeeks: false
-    };
-
-    $scope.toggleMin = function () {
-        $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
-        $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
-    };
-    $scope.toggleMin();
-    //点击open1的时候
-    $scope.open1 = function () {
-        $scope.startDateOpened.opened = true;
-    };
-    //点击open2的时候
-    $scope.open2 = function () {
-        $scope.endDateOpened.opened = true;
-    };
-    //点击open3的时候
-    $scope.open3 = function () {
-        $scope.finishPayStartDateOpened.opened = true;
-    };
-    //点击open4的时候
-    $scope.open4 = function () {
-        $scope.finishPayEndDateOpened.opened = true;
-    };
-    $scope.startDateOpened = {
-        opened: false
-    };
-    $scope.endDateOpened = {
-        opened: false
-    };
-    $scope.finishPayStartDateOpened = {
-        opened: false
-    };
-    $scope.finishPayEndDateOpened = {
-        opened: false
-    };
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'yyyy-MM-dd'];
-    $scope.format = $scope.formats[4];
-
-    function getDayClass(data) {
-        var date = data.date,
-            mode = data.mode;
-        if (mode === 'day') {
-            var dayToCheck = new Date(date).setHours(0, 0, 0, 0);
-
-            for (var i = 0; i < $scope.events.length; i++) {
-                var currentDay = new Date($scope.events[i].date).setHours(0, 0, 0, 0);
-
-                if (dayToCheck === currentDay) {
-                    return $scope.events[i].status;
-                }
-            }
-        }
-        return '';
-    }
-
-    //-----------------时间控件  end-----------------------
 });
 //举报内容
 App.controller("orderListDetailsController", function ($scope, $uibModalInstance, items) {

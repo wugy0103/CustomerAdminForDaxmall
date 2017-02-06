@@ -35,7 +35,7 @@ App.controller("salesStatisticsController", function ($scope, ngProgressFactory,
         }, function(rej) {
             console.log(rej);
             $scope.progressbar.complete();
-          toastr.error(rej,"请求失败：");
+          toastr.error(rej.status+"("+rej.statusText+")","请求失败：");
         });
     };
     $scope.query();

@@ -17,12 +17,14 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
     //开发地址
-    $rootScope.BASEURLbeta = "http://192.168.1.243:8080/";
-    $rootScope.BASEURL = "http://192.168.2.194:8082/";
+    $rootScope.BASEURL = "http://192.168.1.243:8082/";
+    //$rootScope.BASEURL = "http://192.168.2.194:8082/";
+    $rootScope.LoaclBASEURL = "http://localhost:3002/api/";
     //服务器地址
     //$rootScope.BASEURL = "http://test.customer.daxmall.com/";
     //$rootScope.BASEURL = "http://customer.daxmall.com/";
     // api地址
+    //接口模式
     $rootScope.api = {
         //登陆接口
         login: $rootScope.BASEURL + "login/doLogin",
@@ -43,4 +45,25 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         //导出销售统计
         getLsSubCountexp: $rootScope.BASEURL + "lsSubCount/exp"
     };
+   /* //本地json模式
+    $rootScope.api = {
+        //登陆接口
+        login: $rootScope.LoaclBASEURL + "login.json",
+        //查询订单
+        getLsSublist: $rootScope.LoaclBASEURL + "orderManage/getLsSublist.json",
+        //导出订单
+        getLsSubexp: $rootScope.LoaclBASEURL + "lsSub/exp",
+        //查询用户
+        getLsUserlist: $rootScope.LoaclBASEURL + "orderManage/getLsSublist.json",
+        //导出用户
+        getLsUserexportExcel: $rootScope.LoaclBASEURL + "lsUser/exportExcel",
+        //查询退换货
+        getLsProdReturnlist: $rootScope.LoaclBASEURL + "orderManage/getLsSublist.json",
+        //导出退换货
+        getLsProdReturnexp: $rootScope.LoaclBASEURL + "lsProdReturn/exp",
+        //销售统计
+        getLsSubCountlist: $rootScope.LoaclBASEURL + "orderManage/getLsSublist.json",
+        //导出销售统计
+        getLsSubCountexp: $rootScope.LoaclBASEURL + "lsSubCount/exp"
+    };*/
 }]);

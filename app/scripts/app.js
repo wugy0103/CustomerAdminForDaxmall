@@ -4,9 +4,8 @@
 
 'use strict';
 var App, modules;
-modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'angularPromiseButtons', 'AdminFilters','AdminService', "ui.bootstrap", 'ngStorage', 'angular-confirm', 'toastr'];
+modules = ['ui.router', 'ngSanitize', 'ngProgress', 'ui.select', 'angularPromiseButtons', 'AdminFilters','AdminService', 'ngStorage', 'angular-confirm', 'toastr','ui.bootstrap','ui.bootstrap.datetimepicker'];
 App = angular.module('CustomerAdminForDaxmall', modules);
-
 //路由配置
 App.config(function($stateProvider, $urlRouterProvider,$locationProvider,$qProvider) {
     $locationProvider.hashPrefix('');//新的ngRoute中默认的路由分割符号是#!，已经不是#了,这句话就是用回#。
