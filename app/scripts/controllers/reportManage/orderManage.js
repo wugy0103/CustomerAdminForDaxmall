@@ -81,6 +81,10 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
     //重置
     $scope.reset = function () {
         $scope.data = {};
+        $scope.startDate=$scope.data.startDate;
+        $scope.endDate=$scope.data.startDate;
+        $scope.finishPayStartDate=$scope.data.startDate;
+        $scope.finishPayEndDate=$scope.data.startDate;
         $scope.toPageNum = 1;
         $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
         $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;

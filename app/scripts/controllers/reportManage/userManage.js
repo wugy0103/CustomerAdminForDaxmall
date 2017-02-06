@@ -45,6 +45,8 @@ App.controller("userManageController", function ($scope, ngProgressFactory, rest
     //重置
     $scope.reset = function () {
         $scope.data = {};
+        $scope.lastLoginTimeStart = $scope.data.lastLoginTimeStart;
+        $scope.lastLoginTimeEnd = $scope.data.lastLoginTimeEnd;
         $scope.toPageNum = 1;
         $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
         $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;

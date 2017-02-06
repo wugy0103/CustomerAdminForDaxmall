@@ -45,6 +45,8 @@ App.controller("salesStatisticsController", function ($scope, ngProgressFactory,
     //重置
     $scope.reset = function () {
         $scope.data = {};
+        $scope.paystartDate = $scope.data.paystartDate;
+        $scope.payendDate = $scope.data.payendDate;
         $scope.toPageNum = 1;
         $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
         $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;
