@@ -3,25 +3,37 @@
     <form action="{{sce.exportUrl}}" method="POST" ng-enter="search()">
         <section class="parameter">
             <div class="row">
-                <div class="form-group col-lg-3">
-                    <label class="col-md-4 control-label">最后登录时间</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="lastLoginTimeStart"
-                               uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeStart"
-                               is-open="lastLoginTimeStartOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open1()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-3 control-label">最后登录时间</label>
+                    <div class="dropdown-toggle col-md-8" id="lastLoginTimeStart" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="lastLoginTimeStart"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="lastLoginTimeStart" value="{{data.lastLoginTimeStart}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="lastLoginTimeStart">
+                        <datetimepicker data-ng-model="lastLoginTimeStart"
+                                        data-datetimepicker-config="{ dropdownSelector: '#lastLoginTimeStart'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
-                <div class="form-group col-lg-3">
-                    <label class="col-md-2 control-label">至</label>
-
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="lastLoginTimeEnd"
-                               uib-datepicker-popup="{{format}}" ng-model="data.lastLoginTimeEnd" is-open="lastLoginTimeEndOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open2()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-1 control-label">至</label>
+                    <div class="dropdown-toggle col-md-8" id="lastLoginTimeEnd" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="lastLoginTimeEnd" name="lastLoginTimeEnd"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="lastLoginTimeEnd" value="{{data.lastLoginTimeEnd}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="lastLoginTimeEnd">
+                        <datetimepicker data-ng-model="lastLoginTimeEnd"
+                                        data-datetimepicker-config="{ dropdownSelector: '#lastLoginTimeEnd'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
                 <div class="form-group col-lg-3">
                     <label class="col-md-3 control-label">用户手机号</label>

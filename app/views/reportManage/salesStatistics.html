@@ -3,24 +3,37 @@
     <form action="{{sce.exportUrl}}" method="POST" ng-enter="search()">
         <section class="parameter">
             <div class="row">
-                <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">付款时间</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="paystartDate"
-                               uib-datepicker-popup="{{format}}" ng-model="data.paystartDate"
-                               is-open="paystartDateOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open1()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-2 control-label">付款时间</label>
+                    <div class="dropdown-toggle col-md-8" id="paystartDate" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="paystartDate"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="paystartDate" value="{{data.paystartDate}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="paystartDate">
+                        <datetimepicker data-ng-model="paystartDate"
+                                        data-datetimepicker-config="{ dropdownSelector: '#paystartDate'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
-                <div class="form-group col-lg-3">
-                    <label class="col-md-2 control-label">至</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="payendDate"
-                               uib-datepicker-popup="{{format}}" ng-model="data.payendDate" is-open="payendDateOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open2()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-1 control-label">至</label>
+                    <div class="dropdown-toggle col-md-8" id="payendDate" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="payendDate" name="payendDate"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="payendDate" value="{{data.payendDate}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="payendDate">
+                        <datetimepicker data-ng-model="payendDate"
+                                        data-datetimepicker-config="{ dropdownSelector: '#payendDate'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
             </div>
         </section>

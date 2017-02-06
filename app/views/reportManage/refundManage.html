@@ -3,51 +3,73 @@
     <form action="{{sce.exportUrl}}" method="POST" ng-enter="search()">
         <section class="parameter">
             <div class="row">
-                <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">下单时间</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="startDate"
-                               uib-datepicker-popup="{{format}}" ng-model="data.startDate"
-                               is-open="startDateOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open1()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-2 control-label">下单时间</label>
+                    <div class="dropdown-toggle col-md-8" id="startDate" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="startDate"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="startDate" value="{{data.startDate}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="startDate">
+                        <datetimepicker data-ng-model="startDate"
+                                        data-datetimepicker-config="{ dropdownSelector: '#startDate'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
-                <div class="form-group col-lg-3">
-                    <label class="col-md-2 control-label">至</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="endDate"
-                               uib-datepicker-popup="{{format}}" ng-model="data.endDate" is-open="endDateOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open2()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-1 control-label">至</label>
+                    <div class="dropdown-toggle col-md-8" id="endDate" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="endDate"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="endDate" value="{{data.endDate}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="endDate">
+                        <datetimepicker data-ng-model="endDate"
+                                        data-datetimepicker-config="{ dropdownSelector: '#endDate'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
-                <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">付款时间</label>
 
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="finishPayStartDate"
-                               uib-datepicker-popup="{{format}}" ng-model="data.finishPayStartDate"
-                               is-open="finishPayStartDateOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open3()"></i>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-2 control-label">付款时间</label>
+                    <div class="dropdown-toggle col-md-8" id="finishPayStartDate" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="finishPayStartDate"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="finishPayStartDate" value="{{data.finishPayStartDate}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
                     </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="finishPayStartDate">
+                        <datetimepicker data-ng-model="finishPayStartDate"
+                                        data-datetimepicker-config="{ dropdownSelector: '#finishPayStartDate'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
+                </div>
+                <div class="dropdown form-group col-lg-3">
+                    <label class="col-md-1 control-label">至</label>
+                    <div class="dropdown-toggle col-md-8" id="finishPayEndDate" role="button" data-toggle="dropdown">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" disabled ng-model="finishPayEndDate" name="finishPayEndDate"
+                                   datetime-transform
+                                   format="yyyy-MM-dd HH:mm">
+                            <input type="hidden" name="finishPayEndDate" value="{{data.finishPayEndDate}}"/>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="finishPayEndDate">
+                        <datetimepicker data-ng-model="finishPayEndDate"
+                                        data-datetimepicker-config="{ dropdownSelector: '#finishPayEndDate'}" data-on-set-time="OnSetTime()"></datetimepicker>
+                    </ul>
                 </div>
                 <div class="form-group col-lg-3">
-                    <label class="col-md-2 control-label">至</label>
-
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="finishPayEndDate"
-                               uib-datepicker-popup="{{format}}" ng-model="data.finishPayEndDate"
-                               is-open="finishPayEndDateOpened.opened"
-                               datepicker-options="dateOptions" show-button-bar="false">
-                        <i class="glyphicon glyphicon-calendar rili-icon" ng-click="open4()"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">售后状态</label>
+                    <label class="col-md-2 control-label">售后状态</label>
                     <div class="col-md-8">
                         <ui-select allow-clear ng-model="data.status" name="status" theme="bootstrap">
                             <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
@@ -60,7 +82,7 @@
                     <input type="hidden" name="status" value="{{data.status}}"/>
                 </div>
                 <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">售后类型</label>
+                    <label class="col-md-2 control-label">售后类型</label>
                     <div class="col-md-8">
                         <ui-select allow-clear ng-model="data.returnType" name="returnType" theme="bootstrap">
                             <ui-select-match>{{$select.selected.stauts}}</ui-select-match>
@@ -73,7 +95,7 @@
                     <input type="hidden" name="returnType" value="{{data.returnType}}"/>
                 </div>
                 <div class="form-group col-lg-3">
-                    <label class="col-md-3 control-label">订单编号</label>
+                    <label class="col-md-2 control-label">订单编号</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" ng-model="data.subNumber" name="subNumber">
                     </div>

@@ -17,13 +17,16 @@ App.controller("userManageController", function ($scope, ngProgressFactory, rest
     $scope.sce = {
         exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsUserexportExcel),
     }
+    //时间转时间戳
+    $scope.OnSetTime = function () {
+        $scope.data.lastLoginTimeStart = new Date($scope.lastLoginTimeStart).getTime();
+        $scope.data.lastLoginTimeEnd = new Date($scope.lastLoginTimeEnd).getTime();
+    }
     //加载
     $scope.query = function () {
-        $scope.data.lastLoginTimeStart = new Date($scope.data.lastLoginTimeStart).setHours("00", "00", "00");
-        $scope.data.lastLoginTimeEnd = new Date($scope.data.lastLoginTimeEnd).setHours("23", "59", "59");
+        console.log("userparam",$scope.data)
         $scope.progressbar.start();
         $scope.userPromise = restful.fetch($rootScope.api.getLsUserlist, "POST", $scope.data).then(function(res) {
-            console.log("userparam",$scope.data)
             console.log("user",res)
             if(!!res.success){
                 $scope.userData = res;
@@ -57,54 +60,4 @@ App.controller("userManageController", function ($scope, ngProgressFactory, rest
         $scope.data.pageNum = $scope.toPageNum;
         $scope.query();
     };
-    //-----------------时间控件 start-----------------------
-    $scope.inlineOptions = {
-        customClass: getDayClass,
-        minDate: new Date(),
-        showWeeks: false,
-    };
-    $scope.dateOptions = {
-        maxDate: new Date(2020, 5, 22),
-        minDate: new Date(),
-        startingDay: 1,
-        showWeeks: false
-    };
-    $scope.toggleMin = function () {
-        $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
-        $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
-    };
-    $scope.toggleMin();
-    //点击open1的时候
-    $scope.open1 = function () {
-        $scope.lastLoginTimeStartOpened.opened = true;
-    };
-    //点击open2的时候
-    $scope.open2 = function () {
-        $scope.lastLoginTimeEndOpened.opened = true;
-    };
-    $scope.lastLoginTimeStartOpened = {
-        opened: false
-    };
-    $scope.lastLoginTimeEndOpened = {
-        opened: false
-    };
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'yyyy-MM-dd'];
-    $scope.format = $scope.formats[4];
-    function getDayClass(data) {
-        var date = data.date,
-            mode = data.mode;
-        if (mode === 'day') {
-            var dayToCheck = new Date(date).setHours(0, 0, 0, 0);
-
-            for (var i = 0; i < $scope.events.length; i++) {
-                var currentDay = new Date($scope.events[i].date).setHours(0, 0, 0, 0);
-
-                if (dayToCheck === currentDay) {
-                    return $scope.events[i].status;
-                }
-            }
-        }
-        return '';
-    }
-    //-----------------时间控件  end-----------------------
 });
