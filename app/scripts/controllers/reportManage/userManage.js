@@ -18,9 +18,8 @@ App.controller("userManageController", function ($scope, ngProgressFactory, rest
         exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsUserexportExcel),
     }
     //时间转时间戳
-    $scope.OnSetTime = function () {
-        $scope.data.lastLoginTimeStart = new Date($scope.lastLoginTimeStart).getTime();
-        $scope.data.lastLoginTimeEnd = new Date($scope.lastLoginTimeEnd).getTime();
+    $scope.OnSetTime = function (time) {
+       $scope.data[time] = new Date($scope[time]).getTime();
     }
     //加载
     $scope.query = function () {

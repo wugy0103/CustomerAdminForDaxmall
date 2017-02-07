@@ -50,11 +50,8 @@ App.controller("refundManageController", function ($scope, ngProgressFactory, re
         exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsProdReturnexp),
     }
     //时间转时间戳
-    $scope.OnSetTime = function () {
-        $scope.data.startDate = new Date($scope.startDate).getTime();
-        $scope.data.endDate = new Date($scope.endDate).getTime();
-        $scope.data.finishPayStartDate = new Date($scope.finishPayStartDate).getTime();
-        $scope.data.finishPayEndDate = new Date($scope.finishPayEndDate).getTime();
+    $scope.OnSetTime = function (time) {
+        $scope.data[time] = new Date($scope[time]).getTime();
     }
     //加载
     $scope.query = function () {

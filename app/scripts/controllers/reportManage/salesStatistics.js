@@ -18,9 +18,8 @@ App.controller("salesStatisticsController", function ($scope, ngProgressFactory,
         exportUrl: $sce.trustAsResourceUrl($rootScope.api.getLsSubCountexp),
     }
     //时间转时间戳
-    $scope.OnSetTime = function () {
-        $scope.data.paystartDate = new Date($scope.paystartDate).getTime();
-        $scope.data.payendDate = new Date($scope.payendDate).getTime();
+    $scope.OnSetTime = function (time) {
+        $scope.data[time] = new Date($scope[time]).getTime();
     }
     //加载
     $scope.query = function () {
