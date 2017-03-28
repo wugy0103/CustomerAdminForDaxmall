@@ -17,7 +17,7 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         IDCARD: /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i
     };
     //开发地址
-    $rootScope.BASEURL = "http://192.168.1.243:8080/";
+    $rootScope.BASEURL = "http://192.168.1.193:8080/";
     //$rootScope.BASEURL = "http://192.168.2.194:8082/";
     $rootScope.LoaclBASEURL = "http://localhost:3002/api/";
     //服务器地址
@@ -45,8 +45,8 @@ App.run(['$rootScope', 'Session', function ($rootScope) {
         //导出销售统计
         getLsSubCountexp: $rootScope.BASEURL + "lsSubCount/exp"
     };
-   /* //本地json模式
-    $rootScope.api = {
+    //本地json模式
+    /*$rootScope.api = {
         //登陆接口
         login: $rootScope.LoaclBASEURL + "login.json",
         //查询订单

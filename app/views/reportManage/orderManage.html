@@ -153,6 +153,72 @@
                         <input type="text" class="form-control" ng-model="data.mallId" name="mallId">
                     </div>
                 </div>
+
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-3 control-label">确认收货时间</label>
+                <div class="dropdown-toggle col-md-8" id="finallyStartDate" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="finallyStartDate"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="finallyStartDate" value="{{data.finallyStartDate}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="finallyStartDate">
+                  <datetimepicker data-ng-model="finallyStartDate"
+                                  data-datetimepicker-config="{ dropdownSelector: '#finallyStartDate'}" data-on-set-time="OnSetTime('finallyStartDate')"></datetimepicker>
+                </ul>
+              </div>
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-1 control-label">至</label>
+                <div class="dropdown-toggle col-md-8" id="finallyEndDate" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="finallyEndDate"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="finallyEndDate" value="{{data.finallyEndDate}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="finallyEndDate">
+                  <datetimepicker data-ng-model="finallyEndDate"
+                                  data-datetimepicker-config="{ dropdownSelector: '#finallyEndDate'}" data-on-set-time="OnSetTime('finallyEndDate')"></datetimepicker>
+                </ul>
+              </div>
+
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-2 control-label">发货时间</label>
+                <div class="dropdown-toggle col-md-8" id="devStartDate" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="devStartDate"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="devStartDate" value="{{data.devStartDate}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="devStartDate">
+                  <datetimepicker data-ng-model="devStartDate"
+                                  data-datetimepicker-config="{ dropdownSelector: '#devStartDate'}" data-on-set-time="OnSetTime('devStartDate')"></datetimepicker>
+                </ul>
+              </div>
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-1 control-label">至</label>
+                <div class="dropdown-toggle col-md-8" id="devEndDate" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="devEndDate"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="devEndDate" value="{{data.devEndDate}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="devEndDate">
+                  <datetimepicker data-ng-model="devEndDate"
+                                  data-datetimepicker-config="{ dropdownSelector: '#devEndDate'}" data-on-set-time="OnSetTime('devEndDate')"></datetimepicker>
+                </ul>
+              </div>
             </div>
         </section>
         <div class="parameter-btn">
@@ -383,10 +449,20 @@
                     <div class="col-md-8">{{item.subSettlementSn}}</div>
                 </div>
                 <div class="col-lg-4">
-                    <label class="col-md-4 text-right">备注:</label>
+                    <label class="col-md-4 text-right">乡村:</label>
 
-                    <div class="col-md-8">{{item.operatorRemark}}</div>
+                    <div class="col-md-8">{{item.town}}</div>
                 </div>
+              <div class="col-lg-4">
+                <label class="col-md-4 text-right">备注:</label>
+
+                <div class="col-md-8">{{item.operatorRemark}}</div>
+              </div>
+              <div class="col-lg-4">
+                <label class="col-md-4 text-right">商品图片:</label>
+
+                <img src="{{item.pic}}" class="col-md-8"/>
+              </div>
             </div>
         </div>
         <div class="panel-heading" style="overflow:hidden;">

@@ -1,8 +1,461 @@
+<style>
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  #preloader-time {
+    position: relative;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  /*#preloader-time {*/
+    /*background-color: #00aeef;*/
+  /*}*/
+
+  #preloader-time .loader {
+    width: 340px;
+    max-width: 100%;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 100%;
+    overflow: hidden;
+  //border-bottom:1px dashed #fff;
+  }
+
+  #preloader-time .scooter {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 25%;
+    width: 12em;
+  }
+
+  #preloader-time .kolo {
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    background-color: transparent;
+    border: 0.45em solid #231f20;
+    border-radius: 50%;
+    bottom: 0;
+  }
+
+  #preloader-time .kolo:after {
+    content: "";
+    position: absolute;
+    top: -0.0em;
+    left: -0.05em;
+    background-color: #009688;
+    width: 0.20em;
+    height: 0.20em;
+    border-radius: 50%;
+  }
+
+  #preloader-time .kolo-levo {
+    left: 0;
+  }
+
+  #preloader-time .kolo-desno {
+    left: 8.5em;
+  }
+
+  #preloader-time .ogrodje {
+    position: absolute;
+    height: 0.4em;
+    width: 0.4em;
+    background-color: #009688;
+    border-radius: 0.2em;
+  }
+
+  #preloader-time .blatnik {
+    width: 3.9em;
+    height: 3.9em;
+    left: -0.7em;
+    bottom: -0.7em;
+    border-radius: 50%;
+    border: 0.45em solid #009688;
+    border-left: 0.45em solid transparent;
+    border-bottom: 0.45em solid transparent;
+    border-right: 0.45em solid transparent;
+    background-color: transparent;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -moz-transform: rotate(43deg);
+    -ms-transform: rotate(43deg);
+    -o-transform: rotate(43deg);
+    -webkit-transform: rotate(43deg);
+    transform: rotate(43deg);
+  }
+
+  #preloader-time .prekat {
+    width: 4.3em;
+    border-radius: 0;
+    bottom: 0.92em;
+    left: 6.65em;
+    -o-transform-origin: 0em 0em;
+    -ms-transform-origin: 0em 0em;
+    -moz-transform-origin: 0em 0em;
+    -webkit-transform-origin: 0em 0em;
+    transform-origin: 0em 0em;
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #preloader-time .stanga-spodaj {
+    bottom: 1.05em;
+    width: 5.75em;
+    left: 1.20em;
+    border-radius: 0.2em 0 0 0.2em;
+  }
+
+  #preloader-time .balanca-1 {
+    height: 8.5em;
+    bottom: 1.05em;
+    left: 9.6em;
+  }
+
+  #preloader-time .rocka-levo,
+  #preloader-time .rocka-desno {
+    width: 1.8em;
+    bottom: 9.10em;
+  }
+
+  #preloader-time .rocka-levo {
+    left: 7.6em;
+  }
+
+  #preloader-time .rocka-desno {
+    left: 10.2em;
+  }
+
+  #preloader-time .obstacle {
+    position: absolute;
+    width: 1.15em;
+    height: 1.15em;
+    background-color: #009688;
+    border-radius: 50%;
+    left: calc(100% - 1.15em);
+    bottom: 0;
+  }
+
+
+  /*
+   * ANIMATIONS
+   */
+
+  @-o-keyframes spin-normal {
+    0% {
+      -o-transform: rotate(0deg);
+    }
+    100% {
+      -o-transform: rotate(360deg);
+    }
+  }
+
+  @-moz-keyframes spin-normal {
+    0% {
+      -moz-transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+
+  @-ms-keyframes spin-normal {
+    0% {
+      -ms-transform: rotate(0deg);
+    }
+    100% {
+      -ms-transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes spin-normal {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-normal {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spin-normal {
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -moz-animation: spin-normal 0.35s linear infinite;
+    -ms-animation: spin-normal 0.35s linear infinite;
+    -o-animation: spin-normal 0.35s linear infinite;
+    -webkit-animation: spin-normal 0.35s linear infinite;
+    animation: spin-normal 0.35s linear infinite;
+  }
+
+  @-ms-keyframes obstacle-movement {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      left: calc(100% - 1.1em);
+    }
+    20% {
+      width: 1.1em;
+      height: 1.1em;
+      opacity: 1;
+      left: calc(100% - 1.1em);
+    }
+    100% {
+      left: -210%;
+    }
+  }
+
+  @-o-keyframes obstacle-movement {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      left: calc(100% - 1.1em);
+    }
+    20% {
+      width: 1.1em;
+      height: 1.1em;
+      opacity: 1;
+      left: calc(100% - 1.1em);
+    }
+    100% {
+      left: -210%;
+    }
+  }
+
+  @-moz-keyframes obstacle-movement {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      left: calc(100% - 1.1em);
+    }
+    20% {
+      width: 1.1em;
+      height: 1.1em;
+      opacity: 1;
+      left: calc(100% - 1.1em);
+    }
+    100% {
+      left: -210%;
+    }
+  }
+
+  @-webkit-keyframes obstacle-movement {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      left: calc(100% - 1.1em);
+    }
+    20% {
+      width: 1.1em;
+      height: 1.1em;
+      opacity: 1;
+      left: calc(100% - 1.1em);
+    }
+    100% {
+      left: -210%;
+    }
+  }
+
+  @keyframes obstacle-movement {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      left: calc(100% - 1.1em);
+    }
+    20% {
+      width: 1.1em;
+      height: 1.1em;
+      opacity: 1;
+      left: calc(100% - 1.1em);
+    }
+    100% {
+      left: -210%;
+    }
+  }
+
+  .obstacle-movement {
+    -moz-animation: obstacle-movement 2.2s linear infinite;
+    -ms-animation: obstacle-movement 2.2s linear infinite;
+    -o-animation: obstacle-movement 2.2s linear infinite;
+    -webkit-animation: obstacle-movement 2.2s linear infinite;
+    animation: obstacle-movement 2.2s linear infinite;
+  }
+
+  @-o-keyframes scooter-jump {
+    0% {
+      top: 0;
+    }
+    21% {
+      top: 0;
+    }
+    29% {
+      top: -3em;
+    }
+    32% {
+      top: -3em;
+    }
+    50% {
+      top: 0;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @-ms-keyframes scooter-jump {
+    0% {
+      top: 0;
+    }
+    21% {
+      top: 0;
+    }
+    29% {
+      top: -3em;
+    }
+    32% {
+      top: -3em;
+    }
+    50% {
+      top: 0;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @-moz-keyframes scooter-jump {
+    0% {
+      top: 0;
+    }
+    21% {
+      top: 0;
+    }
+    29% {
+      top: -3em;
+    }
+    32% {
+      top: -3em;
+    }
+    50% {
+      top: 0;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @-webkit-keyframes scooter-jump {
+    0% {
+      top: 0;
+    }
+    21% {
+      top: 0;
+    }
+    29% {
+      top: -3em;
+    }
+    32% {
+      top: -3em;
+    }
+    50% {
+      top: 0;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @keyframes scooter-jump {
+    0% {
+      top: 0;
+    }
+    21% {
+      top: 0;
+    }
+    29% {
+      top: -3em;
+    }
+    32% {
+      top: -3em;
+    }
+    50% {
+      top: 0;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  .scooter-jump {
+    -moz-animation: scooter-jump 2.2s ease-in-out infinite;
+    -ms-animation: scooter-jump 2.2s ease-in-out infinite;
+    -o-animation: scooter-jump 2.2s ease-in-out infinite;
+    -webkit-animation: scooter-jump 2.2s ease-in-out infinite;
+    animation: scooter-jump 2.2s ease-in-out infinite;
+  }
+</style>
 <article ng-controller="MainController" class="container-fluid main">
   <div class="row">
-    <div class="col-md-12 h1 text-center text-primary">欢迎进入电商售后管理系统</div>
+    <div class="col-md-12 h1 text-center text-primary">欢迎进入客服售后管理系统</div>
   </div>
-  <div class="row">
-    <div class="col-md-12 iconfont icon-shouhou1 text-primary text-center icon main-icon"></div>
+  <!--<div class="row">-->
+    <!--<div class="col-md-12 iconfont icon-kefumeimei text-primary text-center icon main-icon"></div>-->
+  <!--</div>-->
+  <div id="preloader-time">
+    <a class="loader" href="http://www.sempatja.si/" target="_blank">
+      <div class="scooter scooter-jump">
+        <div class="kolo-levo kolo spin-normal"></div>
+        <div class="kolo-desno kolo spin-normal"></div>
+        <div class="ogrodje blatnik"></div>
+        <div class="ogrodje stanga-spodaj"></div>
+        <div class="ogrodje prekat"></div>
+        <div class="ogrodje balanca-1"></div>
+        <div class="ogrodje rocka-levo"></div>
+        <div class="ogrodje rocka-desno"></div>
+      </div>
+      <!-- .scooter -->
+      <div class="obstacle obstacle-movement"></div>
+      <!-- obstacle -->
+    </a>
   </div>
 </article>

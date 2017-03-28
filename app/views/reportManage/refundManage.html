@@ -101,6 +101,73 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-3 control-label">申请退款时间</label>
+                <div class="dropdown-toggle col-md-8" id="createStartDate" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="createStartDate"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="createStartDate" value="{{data.createStartDate}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="createStartDate">
+                  <datetimepicker data-ng-model="createStartDate"
+                                  data-datetimepicker-config="{ dropdownSelector: '#createStartDate'}" data-on-set-time="OnSetTime('createStartDate')"></datetimepicker>
+                </ul>
+              </div>
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-1 control-label">至</label>
+                <div class="dropdown-toggle col-md-8" id="createEndDate" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="createEndDate"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="createEndDate" value="{{data.createEndDate}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="createEndDate">
+                  <datetimepicker data-ng-model="createEndDate"
+                                  data-datetimepicker-config="{ dropdownSelector: '#createEndDate'}" data-on-set-time="OnSetTime('createEndDate')"></datetimepicker>
+                </ul>
+              </div>
+
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-2 control-label">处理时间</label>
+                <div class="dropdown-toggle col-md-8" id="disposeStartTime" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="disposeStartTime"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="disposeStartTime" value="{{data.disposeStartTime}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="disposeStartTime">
+                  <datetimepicker data-ng-model="disposeStartTime"
+                                  data-datetimepicker-config="{ dropdownSelector: '#disposeStartTime'}" data-on-set-time="OnSetTime('disposeStartTime')"></datetimepicker>
+                </ul>
+              </div>
+              <div class="dropdown form-group col-lg-3">
+                <label class="col-md-1 control-label">至</label>
+                <div class="dropdown-toggle col-md-8" id="disposeEndTime" role="button" data-toggle="dropdown">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" disabled ng-model="disposeEndTime"
+                           datetime-transform
+                           format="yyyy-MM-dd HH:mm">
+                    <input type="hidden" name="disposeEndTime" value="{{data.disposeEndTime}}"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="disposeEndTime">
+                  <datetimepicker data-ng-model="disposeEndTime"
+                                  data-datetimepicker-config="{ dropdownSelector: '#disposeEndTime'}" data-on-set-time="OnSetTime('disposeEndTime')"></datetimepicker>
+                </ul>
+              </div>
+            </div>
         </section>
         <div class="parameter-btn">
             <button type="button" class="btn btn-raised btn-primary" ng-click="search()">查询</button>

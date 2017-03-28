@@ -18,7 +18,7 @@ angular.module("AdminService", [])
             },
             query: function(resource, params) {//查询
                 params = (typeof params) !== 'undefined' ? params : {};//params 请求参数，将在URL上被拼接成？key=value
-              
+
                 promise = $http({ url: resource, method: "GET", params: params })
                     .then(function(response) {
                         return response.data;
