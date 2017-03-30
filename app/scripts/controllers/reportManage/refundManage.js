@@ -79,6 +79,10 @@ App.controller("refundManageController", function ($scope, ngProgressFactory, re
         $scope.endDate=$scope.data.startDate;
         $scope.finishPayStartDate=$scope.data.startDate;
         $scope.finishPayEndDate=$scope.data.startDate;
+        $scope.createStartDate=$scope.data.startDate;
+        $scope.createEndDate=$scope.data.startDate;
+        $scope.disposeStartTime=$scope.data.startDate;
+        $scope.disposeEndTime=$scope.data.startDate;
         $scope.toPageNum = 1;
         $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
         $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;

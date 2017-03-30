@@ -7,6 +7,18 @@
 
 'use strict';
 App.controller("orderManageController", function ($scope, ngProgressFactory, restful, $rootScope, $uibModal, toastr,$sce) {
+    //$scope.isCommitted=false;
+    //$scope.checkPost= function () {
+    //    if (!$scope.isCommitted) {
+    //        $scope.isCommitted = true;
+    //        return true;
+    //    }
+    //    else {
+    //        alert("小猫已经很努力地在导出呢，不要急嘛！！！");
+    //        return false;
+    //    }
+    //}
+
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.data = {};
     $scope.zhuangtai1 = [{
@@ -82,6 +94,10 @@ App.controller("orderManageController", function ($scope, ngProgressFactory, res
         $scope.endDate=$scope.data.startDate;
         $scope.finishPayStartDate=$scope.data.startDate;
         $scope.finishPayEndDate=$scope.data.startDate;
+        $scope.finallyStartDate=$scope.data.startDate;
+        $scope.finallyEndDate=$scope.data.startDate;
+        $scope.devStartDate=$scope.data.startDate;
+        $scope.devEndDate=$scope.data.startDate;
         $scope.toPageNum = 1;
         $scope.data.pageNum = $rootScope.PAGINATION_CONFIG.PAGEINDEX;
         $scope.data.pageSize = $rootScope.PAGINATION_CONFIG.PAGESIZE;

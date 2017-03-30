@@ -416,7 +416,7 @@
                 <div class="col-lg-4">
                     <label class="col-md-4 text-right">分销的用户名:</label>
 
-                    <div class="col-md-8">{{item.sellId}}</div>
+                    <div class="col-md-8">{{item.sellName}}</div>
                 </div>
                 <div class="col-lg-4">
                     <label class="col-md-4 text-right">订单状态:</label>
@@ -449,7 +449,7 @@
                     <div class="col-md-8">{{item.subSettlementSn}}</div>
                 </div>
                 <div class="col-lg-4">
-                    <label class="col-md-4 text-right">乡村:</label>
+                    <label class="col-md-4 text-right">乡镇:</label>
 
                     <div class="col-md-8">{{item.town}}</div>
                 </div>
@@ -461,7 +461,7 @@
               <div class="col-lg-4">
                 <label class="col-md-4 text-right">商品图片:</label>
 
-                <img src="{{item.pic}}" class="col-md-8"/>
+                <img onerror="onerror=null; src='/images/placeholder.png'" src="{{item.pic}}" class="col-md-8"/>
               </div>
             </div>
         </div>
